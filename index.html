@@ -4,33 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tarasy Gąski — Apartamenty inwestycyjne 150 m od plaży</title>
-  <meta name="description" content="Tarasy Gąski — nowoczesne apartamenty inwestycyjne nad Bałtykiem. 150 m od plaży, model 80/20, operator BLU Apartments. Sprawdź dostępność." />
-
-  <!-- Swiper CSS -->
+  <meta name="description" content="Tarasy Gąski — nowoczesne apartamenty inwestycyjne nad Bałtykiem. 150 m od plaży, model 80/20, operator BLU Apartments. Sprawdź dostępność i ceny." />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <!-- Style lokalne -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- ═══════════════════════════════════════════════════════
-     HEADER
-     ═══════════════════════════════════════════════════════ -->
+<!-- ═══ HEADER ═══ -->
 <header id="header">
   <div class="container header-inner">
-    <a href="#hero" class="logo">
+    <a href="index.html" class="logo">
       <img src="galeria/02-logo/logo-biale.png" alt="Tarasy Gąski logo" />
     </a>
     <nav class="nav">
       <ul>
         <li><a href="#inwestycja">Inwestycja</a></li>
-        <li><a href="#mieszkania">Mieszkania</a></li>
-        <li><a href="#model">Model najmu</a></li>
-        <li><a href="#galeria">Galeria</a></li>
-        <li><a href="#lokalizacja">Lokalizacja</a></li>
-        <li><a href="#kontakt" class="btn btn-primary" style="padding:10px 22px;font-size:13px;">Zapytaj o ofertę</a></li>
+        <li><a href="apartamenty.html">Apartamenty</a></li>
+        <li><a href="model-biznesowy.html">Model biznesowy</a></li>
+        <li><a href="operator.html">Operator</a></li>
+        <li><a href="lokalizacja.html">Lokalizacja</a></li>
+        <li><a href="deweloper.html">Deweloper</a></li>
+        <li><a href="kontakt.html" class="btn btn-primary" style="padding:10px 22px;font-size:13px;">Zapytaj o ofertę</a></li>
       </ul>
     </nav>
     <button class="hamburger" aria-label="Menu">
@@ -39,9 +34,7 @@
   </div>
 </header>
 
-<!-- ═══════════════════════════════════════════════════════
-     HERO
-     ═══════════════════════════════════════════════════════ -->
+<!-- ═══ HERO ═══ -->
 <section id="hero">
   <div class="hero-bg" style="background-image: url('galeria/01-hero/01-hero.png');"></div>
   <div class="container">
@@ -54,10 +47,10 @@
       <p>Apartament inwestycyjny, który pracuje na siebie przez cały rok.<br />
          Pełna bezobsługowość, model 80/20, operator BLU Apartments.</p>
       <div class="hero-buttons">
-        <a href="#mieszkania" class="btn btn-primary">
-          <i class="fas fa-search" style="margin-right:8px"></i>Sprawdź dostępność
+        <a href="apartamenty.html" class="btn btn-primary">
+          <i class="fas fa-search" style="margin-right:8px"></i>Sprawdź dostępność i ceny
         </a>
-        <a href="#kontakt" class="btn btn-outline">Porozmawiajmy</a>
+        <a href="kontakt.html" class="btn btn-outline">Porozmawiajmy</a>
       </div>
     </div>
   </div>
@@ -80,8 +73,8 @@
         </div>
         <div class="stat-sep"></div>
         <div class="stat">
-          <div class="stat-num">30 dni</div>
-          <div class="stat-label">pobyt właścicielski / rok</div>
+          <div class="stat-num">od 295 tys.</div>
+          <div class="stat-label">zł netto (cena promo)</div>
         </div>
         <div class="stat-sep"></div>
         <div class="stat">
@@ -93,9 +86,23 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     O INWESTYCJI
-     ═══════════════════════════════════════════════════════ -->
+<!-- ═══ PREMIA STARTOWA — urgency bar ═══ -->
+<div class="premia-bar">
+  <div class="container">
+    <div class="premia-bar-inner">
+      <div class="premia-bar-text">
+        <i class="fas fa-bolt" style="color:var(--color-accent);margin-right:8px;"></i>
+        <strong>Premia Startowa -10%</strong> — ograniczona pula dla pierwszych 8 umów.
+        6 z 26 lokali już zarezerwowanych — w tym wszystkie 4 apartamenty premium z tarasem na dachu.
+      </div>
+      <a href="apartamenty.html#premia" class="btn btn-primary" style="padding:9px 20px;font-size:13px;white-space:nowrap;">
+        Sprawdź promocję
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ O INWESTYCJI ═══ -->
 <section id="inwestycja">
   <div class="container">
     <div class="inwestycja-grid">
@@ -107,8 +114,8 @@
           <br />
           <p>Projekt architektów Kacpra Bromirskiego i Tomasza Sobiśkiego — drewno, szkło, tynk strukturalny i naturalne kolory tworzą estetykę klasy semi-premium. Dwa budynki, 26 apartamentów, 3 kondygnacje.</p>
         </div>
-        <a href="#kontakt" class="btn btn-dark" style="margin-top:32px">
-          <i class="fas fa-file-alt" style="margin-right:8px"></i>Pobierz prospekt
+        <a href="kontakt.html" class="btn btn-dark" style="margin-top:32px">
+          <i class="fas fa-file-alt" style="margin-right:8px"></i>Pobierz pakiet inwestora
         </a>
       </div>
       <div class="inwestycja-img fade-up">
@@ -118,7 +125,6 @@
       </div>
     </div>
 
-    <!-- Feature cards -->
     <div class="features-grid" style="margin-top:80px">
       <div class="feature-card fade-up">
         <div class="feature-icon"><i class="fas fa-umbrella-beach"></i></div>
@@ -138,7 +144,7 @@
       <div class="feature-card fade-up">
         <div class="feature-icon"><i class="fas fa-building"></i></div>
         <h3>Sprawdzony deweloper</h3>
-        <p>AT Inwest — ponad 10 lat działalności, 14 zrealizowanych inwestycji, ponad 15 000 m² PUM. Willa nad Strumykiem, Ogrody Szczepankowa.</p>
+        <p>AT Inwest — od 2015 roku, 14 zrealizowanych inwestycji, ponad 15 000 m² PUM. Deweloper i generalny wykonawca w jednym.</p>
       </div>
       <div class="feature-card fade-up">
         <div class="feature-icon"><i class="fas fa-star"></i></div>
@@ -154,31 +160,31 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     MODEL INWESTYCYJNY
-     ═══════════════════════════════════════════════════════ -->
+<!-- ═══ MODEL INWESTYCYJNY ═══ -->
 <section id="model" style="padding:100px 0; background:var(--color-primary);">
   <div class="container">
     <div style="text-align:center; margin-bottom:60px;">
       <div class="section-label" style="color:var(--color-accent);">Jak to działa</div>
-      <h2 class="section-title" style="color:var(--color-white);">Model inwestycyjny</h2>
-      <p class="section-subtitle" style="color:rgba(255,255,255,0.75); margin:0 auto;">Kup, wyposaż, oddaj operatorowi i zarabiaj.<br />Pełna bezobsługowość od A do Z.</p>
+      <h2 class="section-title" style="color:var(--color-white);">Model inwestycyjny w jednym zdaniu</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,0.75); margin:0 auto; font-size:18px; font-weight:600;">
+        Kupujesz apartament → Operator zarządza najmem → 80% przychodów netto trafia do Ciebie co miesiąc.
+      </p>
     </div>
     <div class="model-cards">
       <div class="model-card fade-up">
         <div class="model-num">80%</div>
         <h3>Twój udział w przychodzie</h3>
-        <p>80% przychodu netto z najmu trafia bezpośrednio do Ciebie. Rozliczenia miesięczne, pełna transparentność, Panel Właściciela online 24/7.</p>
+        <p>80% przychodu netto z najmu całego budynku trafia do właścicieli proporcjonalnie do udziału lokalu. Rozliczenia do 20. dnia następnego miesiąca.</p>
       </div>
       <div class="model-card fade-up">
         <div class="model-num">30 dni</div>
         <h3>Pobyt właścicielski</h3>
-        <p>Korzystaj ze swojego apartamentu 30 dni w roku — poza sezonem szczytowym (1 lipca – 22 sierpnia). Rezerwujesz przez dedykowaną aplikację.</p>
+        <p>Korzystaj ze swojego apartamentu 30 dni w roku — poza sezonem specjalnym (1 lipca – 22 sierpnia). 7 dni dostępne w szczycie sezonu.</p>
       </div>
       <div class="model-card fade-up">
         <div class="model-num">BLU</div>
         <h3>Operator z doświadczeniem</h3>
-        <p>BLU Apartments zarządza ponad 150 apartamentami na zachodnim wybrzeżu od 12 lat. Ocena gości: 8.8–9.2/10 na Booking.com.</p>
+        <p>BLU Apartments zarządza ponad 150 apartamentami na zachodnim wybrzeżu od 12 lat. Ocena gości: 8.8–9.2/10 na Booking.com. Panel właściciela online 24/7.</p>
       </div>
     </div>
     <!-- Harmonogram płatności -->
@@ -212,71 +218,130 @@
           <div class="harmonogram-date">1 lutego 2027</div>
         </div>
       </div>
-      <div style="margin-top:20px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.15); color:rgba(255,255,255,0.7); font-size:14px; display:flex; gap:40px; flex-wrap:wrap;">
-        <span><i class="fas fa-tools" style="color:var(--color-accent); margin-right:6px;"></i>Kwiecień 2027 — Wykończenie pod klucz</span>
-        <span><i class="fas fa-key" style="color:var(--color-accent); margin-right:6px;"></i>Lato 2027 — Przekazanie operatorowi, start najmu</span>
+      <div style="margin-top:20px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.15); color:rgba(255,255,255,0.7); font-size:14px; display:flex; gap:40px; flex-wrap:wrap; justify-content:space-between; align-items:center;">
+        <div style="display:flex;gap:40px;flex-wrap:wrap;">
+          <span><i class="fas fa-tools" style="color:var(--color-accent); margin-right:6px;"></i>Kwiecień 2027 — Wykończenie pod klucz</span>
+          <span><i class="fas fa-key" style="color:var(--color-accent); margin-right:6px;"></i>Lato 2027 — Przekazanie operatorowi, start najmu</span>
+        </div>
+        <a href="model-biznesowy.html" style="color:var(--color-accent); font-weight:700; font-size:14px;">
+          Pełny opis modelu → <i class="fas fa-arrow-right" style="margin-left:4px;"></i>
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     WYBIERZ MIESZKANIE
-     ═══════════════════════════════════════════════════════ -->
-<section id="mieszkania" style="padding:100px 0; background:var(--color-bg);">
+<!-- ═══ CO WCHODZI W CENĘ ═══ -->
+<section id="cena" style="padding:100px 0; background:var(--color-white);">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:60px;" class="fade-up">
+      <div class="section-label">Transparentność</div>
+      <h2 class="section-title">Przejrzyste zasady — wiesz dokładnie, za co płacisz</h2>
+    </div>
+    <div class="cena-grid fade-up">
+      <div class="cena-col cena-col--neutral">
+        <div class="cena-col-icon"><i class="fas fa-home"></i></div>
+        <h3>Cena apartamentu zawiera</h3>
+        <ul class="cena-list">
+          <li><i class="fas fa-check"></i> Lokal w stanie deweloperskim</li>
+          <li><i class="fas fa-check"></i> Pełna instalacja elektryczna, wod-kan i wentylacyjna</li>
+          <li><i class="fas fa-check"></i> Własność lokalu — akt notarialny</li>
+          <li><i class="fas fa-check"></i> Udział w częściach wspólnych nieruchomości</li>
+        </ul>
+      </div>
+      <div class="cena-col cena-col--accent">
+        <div class="cena-col-icon"><i class="fas fa-plus-circle"></i></div>
+        <h3>Opcje do wyboru (extra)</h3>
+        <ul class="cena-list">
+          <li><i class="fas fa-star"></i> <strong>Wykończenie pod klucz</strong><br /><small>2 530 zł/m² netto · płatność w 3 ratach</small></li>
+          <li><i class="fas fa-car"></i> <strong>Miejsce parkingowe</strong><br /><small>15 000 zł netto · parking naziemny</small></li>
+        </ul>
+        <div style="margin-top:20px; padding:12px; background:rgba(255,255,255,0.15); border-radius:8px; font-size:13px;">
+          <i class="fas fa-info-circle" style="margin-right:6px;"></i>Specyfikacja wykończenia dostępna na życzenie.
+        </div>
+      </div>
+      <div class="cena-col cena-col--info">
+        <div class="cena-col-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+        <h3>Koszty po zakupie</h3>
+        <ul class="cena-list">
+          <li><i class="fas fa-handshake"></i> <strong>Operator BLU Apartments</strong><br /><small>80% przychodów netto dla właściciela / 20% dla operatora</small></li>
+          <li><i class="fas fa-receipt"></i> Prowizje portali OTA (Booking, Airbnb…)</li>
+          <li><i class="fas fa-credit-card"></i> Koszty obsługi płatności online</li>
+          <li><i class="fas fa-broom"></i> Koszty sprzątania między pobytami</li>
+        </ul>
+        <div style="margin-top:16px; padding:12px; background:rgba(28,61,90,0.06); border-radius:8px; font-size:13px; color:var(--color-primary);">
+          <strong>Koszty operacyjne operatora</strong> (marketing, recepcja, serwis) pokrywane są z 20% operatora — nie pomniejszają Twoich 80%.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ 3 KROKI — REZERWACJA ═══ -->
+<section id="rezerwacja" style="padding:100px 0; background:var(--color-bg);">
+  <div class="container">
+    <div style="text-align:center; margin-bottom:60px;" class="fade-up">
+      <div class="section-label">Jak kupić</div>
+      <h2 class="section-title">3 kroki do Twojego apartamentu</h2>
+    </div>
+    <div class="kroki-grid fade-up">
+      <div class="krok">
+        <div class="krok-num">1</div>
+        <h3>Wybierz lokal</h3>
+        <p>Przejrzyj tabelę, porównaj metraże i ceny, zdecyduj się na konkretny numer. Nie wiesz, który wybrać? Zadzwoń — doradca pomoże dopasować lokal do Twojego budżetu i celu.</p>
+        <a href="apartamenty.html" class="krok-link">Zobacz dostępne lokale <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="krok-sep"></div>
+      <div class="krok">
+        <div class="krok-num">2</div>
+        <h3>Zarezerwuj</h3>
+        <p>Wpłacasz <strong>3 000 zł</strong> rezerwacji. Lokal jest Twój na <strong>10 dni</strong> — w tym czasie przygotowujemy umowę deweloperską.</p>
+      </div>
+      <div class="krok-sep"></div>
+      <div class="krok">
+        <div class="krok-num">3</div>
+        <h3>Podpisz umowę</h3>
+        <p>Umowa deweloperska w formie aktu notarialnego. Pierwsza transza (10% ceny) przy podpisaniu. Kolejne płatności rozłożone w czasie zgodnie z harmonogramem.</p>
+      </div>
+    </div>
+    <div class="info-box fade-up" style="margin-top:40px;">
+      <i class="fas fa-laptop-house info-box-icon"></i>
+      <div>
+        <strong>Kupujesz na odległość?</strong> Całą procedurę — od wyboru lokalu, przez rezerwację, po podpisanie umowy — można przeprowadzić zdalnie. Odbiór prac wykończeniowych możliwy również w formie wideokonferencji.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WYBIERZ APARTAMENT (skrócona lista) ═══ -->
+<section id="mieszkania" style="padding:100px 0; background:var(--color-white);">
   <div class="container">
     <div style="text-align:center; margin-bottom:48px;" class="fade-up">
       <div class="section-label">Oferta</div>
-      <h2 class="section-title">Wybierz swój apartament</h2>
-      <p class="section-subtitle" style="margin:0 auto;">12 apartamentów w 3 kondygnacjach. Powierzchnie 29–52 m², 2 i 3 pokoje.</p>
-    </div>
-
-    <!-- Plan osiedla z zakładkami kondygnacji -->
-    <div class="plan-wrapper fade-up" style="margin-bottom:48px;">
-      <div class="floor-tabs">
-        <button class="floor-tab active" data-floor="parter">Parter</button>
-        <button class="floor-tab" data-floor="I piętro">I piętro</button>
-        <button class="floor-tab" data-floor="II piętro">II piętro</button>
-      </div>
-      <div class="plan-container">
-        <!-- Parter -->
-        <div class="floor-plan-img active" data-floor="parter" style="position:relative;">
-          <img src="galeria/05-plan-osiedla/plan-osiedla.svg" alt="Plan osiedla — parter" />
-          <button class="hotspot" data-lokal="M1" style="left:20%;top:35%;">M1</button>
-          <button class="hotspot" data-lokal="M2" style="left:30%;top:35%;">M2</button>
-          <button class="hotspot" data-lokal="M3" style="left:40%;top:35%;">M3</button>
-          <button class="hotspot" data-lokal="M4" style="left:55%;top:35%;">M4</button>
-          <button class="hotspot" data-lokal="M8" style="left:70%;top:35%;">M8</button>
-        </div>
-        <!-- I piętro -->
-        <div class="floor-plan-img" data-floor="I piętro" style="position:relative;">
-          <img src="galeria/07-rzuty/1-pietro.svg" alt="Rzut I piętra" />
-          <button class="hotspot" data-lokal="M9"  style="left:20%;top:50%;">M9</button>
-          <button class="hotspot" data-lokal="M12" style="left:35%;top:50%;">M12</button>
-          <button class="hotspot" data-lokal="M15" style="left:52%;top:50%;">M15</button>
-          <button class="hotspot" data-lokal="M16" style="left:70%;top:50%;">M16</button>
-        </div>
-        <!-- II piętro -->
-        <div class="floor-plan-img" data-floor="II piętro" style="position:relative;">
-          <img src="galeria/07-rzuty/2-pietro.svg" alt="Rzut II piętra" />
-          <button class="hotspot" data-lokal="M18" style="left:20%;top:65%;">M18</button>
-          <button class="hotspot" data-lokal="M21" style="left:38%;top:65%;">M21</button>
-          <button class="hotspot" data-lokal="M25" style="left:65%;top:65%;">M25</button>
-        </div>
-      </div>
-      <p style="text-align:center; color:var(--color-muted); font-size:13px; margin-top:12px;">
-        <i class="fas fa-mouse-pointer" style="margin-right:6px;"></i>Kliknij numer lokalu na planie, aby przejść do tabeli
-      </p>
+      <h2 class="section-title">Dostępne apartamenty — przegląd</h2>
+      <p class="section-subtitle" style="margin:0 auto;">26 lokali · metraże 29,8–52,1 m² · 2 i 3 pokoje · ceny netto (VAT 23%)</p>
     </div>
 
     <!-- Filtry tabeli -->
-    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:20px;" class="fade-up">
-      <div style="display:flex; gap:8px; align-items:center; margin-right:16px;">
-        <span style="font-size:13px; color:var(--color-muted); font-weight:600;">Kondygnacja:</span>
-        <button class="filter-btn active" data-filter="all">Wszystkie</button>
-        <button class="filter-btn" data-filter="parter">Parter</button>
-        <button class="filter-btn" data-filter="I piętro">I piętro</button>
-        <button class="filter-btn" data-filter="II piętro">II piętro</button>
+    <div class="filtry-bar fade-up">
+      <div class="filtry-group">
+        <span class="filtry-label">Piętro:</span>
+        <button class="filter-btn active" data-filter-floor="all">Wszystkie</button>
+        <button class="filter-btn" data-filter-floor="parter">Parter</button>
+        <button class="filter-btn" data-filter-floor="I piętro">I piętro</button>
+        <button class="filter-btn" data-filter-floor="II piętro">II piętro</button>
+      </div>
+      <div class="filtry-group">
+        <span class="filtry-label">Pokoje:</span>
+        <button class="filter-btn active" data-filter-rooms="all">Wszystkie</button>
+        <button class="filter-btn" data-filter-rooms="2">2 pokoje</button>
+        <button class="filter-btn" data-filter-rooms="3">3 pokoje</button>
+      </div>
+      <div class="filtry-group">
+        <span class="filtry-label">Status:</span>
+        <button class="filter-btn active" data-filter-status="all">Wszystkie</button>
+        <button class="filter-btn" data-filter-status="dostepne">Dostępne</button>
+        <button class="filter-btn" data-filter-status="zarezerwowane">Zarezerwowane</button>
       </div>
     </div>
 
@@ -286,176 +351,410 @@
         <thead>
           <tr>
             <th>Lokal</th>
-            <th>Budynek</th>
-            <th>Kondygnacja</th>
+            <th>Piętro</th>
             <th>Pokoje</th>
             <th>Powierzchnia</th>
-            <th>Cena</th>
-            <th>Cena / m²</th>
+            <th>Balkon/Taras</th>
+            <th>Ogród</th>
+            <th>Widok morze</th>
+            <th>Cena netto</th>
+            <th>Cena promo netto</th>
             <th>Status</th>
-            <th>Rzut</th>
+            <th>Akcja</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="lokale-tbody">
           <!-- Parter -->
-          <tr data-lokal="M1" data-status="dostepne" data-floor="parter">
+          <tr data-lokal="M1" data-floor="parter" data-rooms="2" data-status="dostepne">
             <td><strong>M1</strong></td>
-            <td>Budynek 1</td>
             <td>Parter</td>
             <td>2</td>
             <td>29,8 m²</td>
-            <td>421&nbsp;500 zł</td>
-            <td>11&nbsp;501 zł/m²</td>
-            <td><span class="badge badge-available">Dostępne</span></td>
-            <td><a href="galeria/07-rzuty/parter.svg" target="_blank" class="rzut-link"><i class="fas fa-expand-alt"></i> Rzut</a></td>
+            <td>Taras</td>
+            <td>—</td>
+            <td>—</td>
+            <td>342 700 zł</td>
+            <td class="price-promo">295 000 zł</td>
+            <td><span class="badge badge-available">Wolne</span></td>
+            <td><a href="kontakt.html?lokal=M1" class="btn-zapytaj">Zapytaj</a></td>
           </tr>
-          <tr data-lokal="M2" data-status="dostepne" data-floor="parter">
+          <tr data-lokal="M2" data-floor="parter" data-rooms="2" data-status="dostepne">
             <td><strong>M2</strong></td>
-            <td>Budynek 1</td>
             <td>Parter</td>
             <td>2</td>
             <td>29,8 m²</td>
-            <td>439&nbsp;800 zł</td>
-            <td>12&nbsp;000 zł/m²</td>
-            <td><span class="badge badge-available">Dostępne</span></td>
-            <td><a href="galeria/07-rzuty/parter.svg" target="_blank" class="rzut-link"><i class="fas fa-expand-alt"></i> Rzut</a></td>
+            <td>Taras/Ogród</td>
+            <td>20 m²</td>
+            <td>—</td>
+            <td>357 600 zł</td>
+            <td>—</td>
+            <td><span class="badge badge-available">Wolne</span></td>
+            <td><a href="kontakt.html?lokal=M2" class="btn-zapytaj">Zapytaj</a></td>
           </tr>
-          <tr data-lokal="M3" data-status="zarezerwowane" data-floor="parter">
+          <tr data-lokal="M3" data-floor="parter" data-rooms="3" data-status="zarezerwowane" class="row-reserved">
             <td><strong>M3</strong></td>
-            <td>Budynek 1</td>
             <td>Parter</td>
             <td>3</td>
             <td>52,1 m²</td>
+            <td>Taras/Ogród</td>
+            <td>50 m²</td>
+            <td>Kierunek</td>
             <td>—</td>
             <td>—</td>
-            <td><span class="badge badge-reserved">Zarezerwowane</span></td>
-            <td><a href="galeria/07-rzuty/parter.svg" target="_blank" class="rzut-link"><i class="fas fa-expand-alt"></i> Rzut</a></td>
+            <td><span class="badge badge-reserved">Rezerwacja</span></td>
+            <td>—</td>
           </tr>
-          <tr data-lokal="M4" data-status="dostepne" data-floor="parter">
+          <tr data-lokal="M4" data-floor="parter" data-rooms="3" data-status="dostepne">
             <td><strong>M4</strong></td>
-            <td>Budynek 1</td>
+            <td>Parter</td>
+            <td>3</td>
+            <td>38,2 m²</td>
+            <td>Taras/Ogród</td>
+            <td>30 m²</td>
+            <td>Kierunek</td>
+            <td>454 800 zł</td>
+            <td>—</td>
+            <td><span class="badge badge-available">Wolne</span></td>
+            <td><a href="kontakt.html?lokal=M4" class="btn-zapytaj">Zapytaj</a></td>
+          </tr>
+          <tr data-lokal="M5" data-floor="parter" data-rooms="2" data-status="dostepne">
+            <td><strong>M5</strong></td>
             <td>Parter</td>
             <td>2</td>
-            <td>38,2 m²</td>
-            <td>559&nbsp;400 zł</td>
-            <td>11&nbsp;906 zł/m²</td>
-            <td><span class="badge badge-available">Dostępne</span></td>
-            <td><a href="galeria/07-rzuty/parter.svg" target="_blank" class="rzut-link"><i class="fas fa-expand-alt"></i> Rzut</a></td>
+            <td>34,4 m²</td>
+            <td>Taras/Ogród</td>
+            <td>20 m²</td>
+            <td>Kierunek</td>
+            <td>436 500 zł</td>
+            <td>—</td>
+            <td><span class="badge badge-available">Wolne</span></td>
+            <td><a href="kontakt.html?lokal=M5" class="btn-zapytaj">Zapytaj</a></td>
           </tr>
-          <tr data-lokal="M8" data-status="dostepne" data-floor="parter">
+          <tr data-lokal="M6" data-floor="parter" data-rooms="2" data-status="dostepne">
+            <td><strong>M6</strong></td>
+            <td>Parter</td>
+            <td>2</td>
+            <td>41,9 m²</td>
+            <td>Taras/Ogród</td>
+            <td>40 m²</td>
+            <td>Kierunek</td>
+            <td>507 200 zł</td>
+            <td>—</td>
+            <td><span class="badge badge-available">Wolne</span></td>
+            <td><a href="kontakt.html?lokal=M6" class="btn-zapytaj">Zapytaj</a></td>
+          </tr>
+          <tr data-lokal="M7" data-floor="parter" data-rooms="2" data-status="dostepne">
+            <td><strong>M7</strong></td>
+            <td>Parter</td>
+            <td>2</td>
+            <td>29,8 m²</td>
+            <td>Taras/Ogród</td>
+            <td>20 m²</td>
+            <td>—</td>
+            <td>357 600 zł</td>
+            <td>—</td>
+            <td><span class="badge badge-available">Wolne</span></td>
+            <td><a href="kontakt.html?lokal=M7" class="btn-zapytaj">Zapytaj</a></td>
+          </tr>
+          <tr data-lokal="M8" data-floor="parter" data-rooms="2" data-status="dostepne">
             <td><strong>M8</strong></td>
-            <td>Budynek 2</td>
             <td>Parter</td>
             <td>2</td>
             <td>38,7 m²</td>
-            <td>514&nbsp;400 zł</td>
-            <td>10&nbsp;804 zł/m²</td>
-            <td><span class="badge badge-available">Dostępne</span></td>
-            <td><a href="galeria/07-rzuty/parter.svg" target="_blank" class="rzut-link"><i class="fas fa-expand-alt"></i> Rzut</a></td>
+            <td>Taras</td>
+            <td>—</td>
+            <td>—</td>
+            <td>418 200 zł</td>
+            <td class="price-promo">383 300 zł</td>
+            <td><span class="badge badge-available">Wolne</span></td>
+            <td><a href="kontakt.html?lokal=M8" class="btn-zapytaj">Zapytaj</a></td>
           </tr>
           <!-- I piętro -->
-          <tr data-lokal="M9" data-status="dostepne" data-floor="I piętro">
+          <tr data-lokal="M9" data-floor="I piętro" data-rooms="2" data-status="dostepne">
             <td><strong>M9</strong></td>
-            <td>Budynek 1</td>
             <td>I piętro</td>
             <td>2</td>
             <td>34,2 m²</td>
-            <td>496&nbsp;800 zł</td>
-            <td>11&nbsp;810 zł/m²</td>
-            <td><span class="badge badge-available">Dostępne</span></td>
-            <td><a href="galeria/07-rzuty/1-pietro.svg" target="_blank" class="rzut-link"><i class="fas fa-expand-alt"></i> Rzut</a></td>
+            <td>Taras</td>
+            <td>—</td>
+            <td>—</td>
+            <td>403 900 zł</td>
+            <td class="price-promo">338 900 zł</td>
+            <td><span class="badge badge-available">Wolne</span></td>
+            <td><a href="kontakt.html?lokal=M9" class="btn-zapytaj">Zapytaj</a></td>
           </tr>
-          <tr data-lokal="M12" data-status="dostepne" data-floor="I piętro">
+          <tr data-lokal="M10" data-floor="I piętro" data-rooms="2" data-status="dostepne">
+            <td><strong>M10</strong></td>
+            <td>I piętro</td>
+            <td>2</td>
+            <td>34,2 m²</td>
+            <td>Taras</td>
+            <td>—</td>
+            <td>—</td>
+            <td>404 000 zł</td>
+            <td class="price-promo">339 000 zł</td>
+            <td><span class="badge badge-available">Wolne</span></td>
+            <td><a href="kontakt.html?lokal=M10" class="btn-zapytaj">Zapytaj</a></td>
+          </tr>
+          <tr data-lokal="M11" data-floor="I piętro" data-rooms="2" data-status="dostepne">
+            <td><strong>M11</strong></td>
+            <td>I piętro</td>
+            <td>2</td>
+            <td>34,2 m²</td>
+            <td>Taras</td>
+            <td>—</td>
+            <td>—</td>
+            <td>404 000 zł</td>
+            <td class="price-promo">339 000 zł</td>
+            <td><span class="badge badge-available">Wolne</span></td>
+            <td><a href="kontakt.html?lokal=M11" class="btn-zapytaj">Zapytaj</a></td>
+          </tr>
+          <tr data-lokal="M12" data-floor="I piętro" data-rooms="3" data-status="dostepne">
             <td><strong>M12</strong></td>
-            <td>Budynek 1</td>
             <td>I piętro</td>
             <td>3</td>
             <td>52,1 m²</td>
-            <td>730&nbsp;300 zł</td>
-            <td>11&nbsp;395 zł/m²</td>
-            <td><span class="badge badge-available">Dostępne</span></td>
-            <td><a href="galeria/07-rzuty/1-pietro.svg" target="_blank" class="rzut-link"><i class="fas fa-expand-alt"></i> Rzut</a></td>
+            <td>Taras</td>
+            <td>—</td>
+            <td>Kierunek</td>
+            <td>593 700 zł</td>
+            <td class="price-promo">536 400 zł</td>
+            <td><span class="badge badge-available">Wolne</span></td>
+            <td><a href="kontakt.html?lokal=M12" class="btn-zapytaj">Zapytaj</a></td>
           </tr>
-          <tr data-lokal="M15" data-status="dostepne" data-floor="I piętro">
+          <tr data-lokal="M13" data-floor="I piętro" data-rooms="3" data-status="zarezerwowane" class="row-reserved">
+            <td><strong>M13</strong></td>
+            <td>I piętro</td>
+            <td>3</td>
+            <td>38,2 m²</td>
+            <td>Taras</td>
+            <td>—</td>
+            <td>Kierunek</td>
+            <td>—</td>
+            <td>—</td>
+            <td><span class="badge badge-reserved">Rezerwacja</span></td>
+            <td>—</td>
+          </tr>
+          <tr data-lokal="M14" data-floor="I piętro" data-rooms="2" data-status="dostepne">
+            <td><strong>M14</strong></td>
+            <td>I piętro</td>
+            <td>2</td>
+            <td>34,4 m²</td>
+            <td>Taras</td>
+            <td>—</td>
+            <td>Kierunek</td>
+            <td>443 400 zł</td>
+            <td>—</td>
+            <td><span class="badge badge-available">Wolne</span></td>
+            <td><a href="kontakt.html?lokal=M14" class="btn-zapytaj">Zapytaj</a></td>
+          </tr>
+          <tr data-lokal="M15" data-floor="I piętro" data-rooms="3" data-status="dostepne">
             <td><strong>M15</strong></td>
-            <td>Budynek 1</td>
             <td>I piętro</td>
             <td>3</td>
             <td>48,9 m²</td>
-            <td>686&nbsp;200 zł</td>
-            <td>11&nbsp;409 zł/m²</td>
-            <td><span class="badge badge-available">Dostępne</span></td>
-            <td><a href="galeria/07-rzuty/1-pietro.svg" target="_blank" class="rzut-link"><i class="fas fa-expand-alt"></i> Rzut</a></td>
+            <td>Taras</td>
+            <td>—</td>
+            <td>Kierunek</td>
+            <td>557 900 zł</td>
+            <td class="price-promo">504 100 zł</td>
+            <td><span class="badge badge-available">Wolne</span></td>
+            <td><a href="kontakt.html?lokal=M15" class="btn-zapytaj">Zapytaj</a></td>
           </tr>
-          <tr data-lokal="M16" data-status="dostepne" data-floor="I piętro">
+          <tr data-lokal="M16" data-floor="I piętro" data-rooms="2" data-status="dostepne">
             <td><strong>M16</strong></td>
-            <td>Budynek 2</td>
             <td>I piętro</td>
             <td>2</td>
             <td>40,4 m²</td>
-            <td>541&nbsp;500 zł</td>
-            <td>10&nbsp;898 zł/m²</td>
-            <td><span class="badge badge-available">Dostępne</span></td>
-            <td><a href="galeria/07-rzuty/1-pietro.svg" target="_blank" class="rzut-link"><i class="fas fa-expand-alt"></i> Rzut</a></td>
+            <td>Taras</td>
+            <td>—</td>
+            <td>—</td>
+            <td>440 300 zł</td>
+            <td class="price-promo">399 900 zł</td>
+            <td><span class="badge badge-available">Wolne</span></td>
+            <td><a href="kontakt.html?lokal=M16" class="btn-zapytaj">Zapytaj</a></td>
+          </tr>
+          <tr data-lokal="M17" data-floor="I piętro" data-rooms="2" data-status="dostepne">
+            <td><strong>M17</strong></td>
+            <td>I piętro</td>
+            <td>2</td>
+            <td>34,3 m²</td>
+            <td>Taras</td>
+            <td>—</td>
+            <td>—</td>
+            <td>404 600 zł</td>
+            <td class="price-promo">339 500 zł</td>
+            <td><span class="badge badge-available">Wolne</span></td>
+            <td><a href="kontakt.html?lokal=M17" class="btn-zapytaj">Zapytaj</a></td>
           </tr>
           <!-- II piętro -->
-          <tr data-lokal="M18" data-status="dostepne" data-floor="II piętro">
+          <tr data-lokal="M18" data-floor="II piętro" data-rooms="2" data-status="dostepne">
             <td><strong>M18</strong></td>
-            <td>Budynek 1</td>
             <td>II piętro</td>
             <td>2</td>
             <td>34,2 m²</td>
-            <td>509&nbsp;400 zł</td>
-            <td>12&nbsp;111 zł/m²</td>
-            <td><span class="badge badge-available">Dostępne</span></td>
-            <td><a href="galeria/07-rzuty/2-pietro.svg" target="_blank" class="rzut-link"><i class="fas fa-expand-alt"></i> Rzut</a></td>
+            <td>Taras</td>
+            <td>—</td>
+            <td>—</td>
+            <td>414 200 zł</td>
+            <td>—</td>
+            <td><span class="badge badge-available">Wolne</span></td>
+            <td><a href="kontakt.html?lokal=M18" class="btn-zapytaj">Zapytaj</a></td>
           </tr>
-          <tr data-lokal="M21" data-status="zarezerwowane" data-floor="II piętro">
+          <tr data-lokal="M19" data-floor="II piętro" data-rooms="2" data-status="dostepne">
+            <td><strong>M19</strong></td>
+            <td>II piętro</td>
+            <td>2</td>
+            <td>34,2 m²</td>
+            <td>Taras</td>
+            <td>—</td>
+            <td>—</td>
+            <td>414 300 zł</td>
+            <td>—</td>
+            <td><span class="badge badge-available">Wolne</span></td>
+            <td><a href="kontakt.html?lokal=M19" class="btn-zapytaj">Zapytaj</a></td>
+          </tr>
+          <tr data-lokal="M20" data-floor="II piętro" data-rooms="2" data-status="dostepne">
+            <td><strong>M20</strong></td>
+            <td>II piętro</td>
+            <td>2</td>
+            <td>34,2 m²</td>
+            <td>Taras</td>
+            <td>—</td>
+            <td>—</td>
+            <td>414 300 zł</td>
+            <td>—</td>
+            <td><span class="badge badge-available">Wolne</span></td>
+            <td><a href="kontakt.html?lokal=M20" class="btn-zapytaj">Zapytaj</a></td>
+          </tr>
+          <tr data-lokal="M21" data-floor="II piętro" data-rooms="3" data-status="zarezerwowane" class="row-reserved">
             <td><strong>M21</strong></td>
-            <td>Budynek 1</td>
             <td>II piętro</td>
             <td>3</td>
             <td>52,1 m²</td>
+            <td>Balkon/Dach</td>
+            <td>—</td>
+            <td><span class="badge-morze">Widok</span></td>
             <td>—</td>
             <td>—</td>
-            <td><span class="badge badge-reserved">Zarezerwowane</span></td>
-            <td><a href="galeria/07-rzuty/2-pietro.svg" target="_blank" class="rzut-link"><i class="fas fa-expand-alt"></i> Rzut</a></td>
+            <td><span class="badge badge-reserved">Rezerwacja</span></td>
+            <td>—</td>
           </tr>
-          <tr data-lokal="M25" data-status="dostepne" data-floor="II piętro">
+          <tr data-lokal="M22" data-floor="II piętro" data-rooms="3" data-status="zarezerwowane" class="row-reserved">
+            <td><strong>M22</strong></td>
+            <td>II piętro</td>
+            <td>3</td>
+            <td>38,2 m²</td>
+            <td>Balkon/Dach</td>
+            <td>—</td>
+            <td><span class="badge-morze">Widok</span></td>
+            <td>—</td>
+            <td>—</td>
+            <td><span class="badge badge-reserved">Rezerwacja</span></td>
+            <td>—</td>
+          </tr>
+          <tr data-lokal="M23" data-floor="II piętro" data-rooms="2" data-status="zarezerwowane" class="row-reserved">
+            <td><strong>M23</strong></td>
+            <td>II piętro</td>
+            <td>2</td>
+            <td>34,4 m²</td>
+            <td>Balkon/Dach</td>
+            <td>—</td>
+            <td><span class="badge-morze">Widok</span></td>
+            <td>—</td>
+            <td>—</td>
+            <td><span class="badge badge-reserved">Rezerwacja</span></td>
+            <td>—</td>
+          </tr>
+          <tr data-lokal="M24" data-floor="II piętro" data-rooms="3" data-status="zarezerwowane" class="row-reserved">
+            <td><strong>M24</strong></td>
+            <td>II piętro</td>
+            <td>3</td>
+            <td>48,9 m²</td>
+            <td>Balkon/Dach</td>
+            <td>—</td>
+            <td><span class="badge-morze">Widok</span></td>
+            <td>—</td>
+            <td>—</td>
+            <td><span class="badge badge-reserved">Rezerwacja</span></td>
+            <td>—</td>
+          </tr>
+          <tr data-lokal="M25" data-floor="II piętro" data-rooms="2" data-status="dostepne">
             <td><strong>M25</strong></td>
-            <td>Budynek 2</td>
             <td>II piętro</td>
             <td>2</td>
             <td>40,4 m²</td>
-            <td>556&nbsp;400 zł</td>
-            <td>11&nbsp;197 zł/m²</td>
-            <td><span class="badge badge-available">Dostępne</span></td>
-            <td><a href="galeria/07-rzuty/2-pietro.svg" target="_blank" class="rzut-link"><i class="fas fa-expand-alt"></i> Rzut</a></td>
+            <td>Taras</td>
+            <td>—</td>
+            <td>—</td>
+            <td>452 400 zł</td>
+            <td class="price-promo">399 900 zł</td>
+            <td><span class="badge badge-available">Wolne</span></td>
+            <td><a href="kontakt.html?lokal=M25" class="btn-zapytaj">Zapytaj</a></td>
+          </tr>
+          <tr data-lokal="M26" data-floor="II piętro" data-rooms="2" data-status="dostepne">
+            <td><strong>M26</strong></td>
+            <td>II piętro</td>
+            <td>2</td>
+            <td>34,3 m²</td>
+            <td>Taras</td>
+            <td>—</td>
+            <td>—</td>
+            <td>414 800 zł</td>
+            <td>—</td>
+            <td><span class="badge badge-available">Wolne</span></td>
+            <td><a href="kontakt.html?lokal=M26" class="btn-zapytaj">Zapytaj</a></td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <!-- Legenda + info ustawa deweloperska -->
-    <div class="ustawa-bar fade-up" style="margin-top:24px;">
+    <!-- Legenda -->
+    <div class="ustawa-bar fade-up" style="margin-top:16px;">
       <div style="display:flex; gap:24px; align-items:center; flex-wrap:wrap;">
-        <div style="display:flex; gap:16px; align-items:center;">
-          <span><span class="badge badge-available">Dostępne</span></span>
-          <span><span class="badge badge-reserved">Zarezerwowane</span></span>
+        <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+          <span><span class="badge badge-available">Wolne</span></span>
+          <span><span class="badge badge-reserved">Rezerwacja</span></span>
+          <span class="price-promo" style="font-size:13px; font-weight:700;">Cena promo</span> <small style="color:var(--color-muted)">= Premia Startowa -10%</small>
         </div>
         <div style="display:flex; gap:20px; flex-wrap:wrap; font-size:13px; color:var(--color-muted);">
+          <span>Ceny netto (+ VAT 23%)</span>
           <span><i class="fas fa-university" style="color:var(--color-accent); margin-right:5px;"></i>Otwarty Mieszkaniowy Rachunek Powierniczy</span>
           <span><i class="fas fa-shield-alt" style="color:var(--color-accent); margin-right:5px;"></i>Ustawa Deweloperska 2021</span>
-          <span><i class="fas fa-file-contract" style="color:var(--color-accent); margin-right:5px;"></i>Prospekt informacyjny — <a href="#kontakt" style="color:var(--color-primary); font-weight:600;">pobierz</a></span>
         </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top:40px;" class="fade-up">
+      <a href="apartamenty.html" class="btn btn-dark">
+        <i class="fas fa-th-list" style="margin-right:8px;"></i>Pełna strona z rzutami i układami lokali
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PREMIA STARTOWA ═══ -->
+<section id="premia" style="padding:80px 0; background:var(--color-primary);">
+  <div class="container">
+    <div class="premia-box fade-up">
+      <div class="premia-box-icon"><i class="fas fa-clock"></i></div>
+      <div class="premia-box-content">
+        <h2>Premia Startowa -10% — ograniczona pula</h2>
+        <p>Dla pierwszych <strong>8 podpisanych umów</strong> obowiązuje cena promocyjna, obniżona o 10% od cennika bazowego. Po wykorzystaniu puli wraca cena standardowa.</p>
+        <ul style="margin:16px 0; padding-left:0; list-style:none; display:flex; flex-direction:column; gap:8px;">
+          <li><i class="fas fa-check-circle" style="color:var(--color-accent); margin-right:8px;"></i>Rezerwacja lokalu: <strong>3 000 zł</strong></li>
+          <li><i class="fas fa-check-circle" style="color:var(--color-accent); margin-right:8px;"></i>10 dni na przejście do umowy deweloperskiej</li>
+          <li><i class="fas fa-check-circle" style="color:var(--color-accent); margin-right:8px;"></i>Lokale z ceną promo zaznaczone w tabeli</li>
+        </ul>
+        <a href="kontakt.html" class="btn btn-primary">
+          Sprawdź dostępność promocji — zadzwoń lub zostaw kontakt
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     GALERIA
-     ═══════════════════════════════════════════════════════ -->
+<!-- ═══ GALERIA ═══ -->
 <section id="galeria" style="padding:100px 0; background:var(--color-white);">
   <div class="container">
     <div style="text-align:center; margin-bottom:48px;" class="fade-up">
@@ -488,9 +787,7 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     WIDEO — animacje cinematic
-     ═══════════════════════════════════════════════════════ -->
+<!-- ═══ WIDEO ═══ -->
 <section id="wideo" style="padding:100px 0; background:var(--color-bg2);">
   <div class="container">
     <div style="text-align:center; margin-bottom:48px;" class="fade-up">
@@ -501,105 +798,71 @@
     <div class="video-grid fade-up">
       <div class="video-card">
         <video src="galeria/wizki-ruchome/Cinematic_residential_courtyar_Kling_O3_03692.mp4" muted loop playsinline preload="metadata"></video>
-        <div class="video-overlay">
-          <button class="play-btn"><i class="fas fa-play"></i></button>
-        </div>
+        <div class="video-overlay"><button class="play-btn"><i class="fas fa-play"></i></button></div>
       </div>
       <div class="video-card">
         <video src="galeria/wizki-ruchome/Cinematic_residential_courtyar_Kling_O3_45084.mp4" muted loop playsinline preload="metadata"></video>
-        <div class="video-overlay">
-          <button class="play-btn"><i class="fas fa-play"></i></button>
-        </div>
+        <div class="video-overlay"><button class="play-btn"><i class="fas fa-play"></i></button></div>
       </div>
       <div class="video-card">
         <video src="galeria/wizki-ruchome/Cinematic_residential_garden_s_Kling_O3_80852.mp4" muted loop playsinline preload="metadata"></video>
-        <div class="video-overlay">
-          <button class="play-btn"><i class="fas fa-play"></i></button>
-        </div>
+        <div class="video-overlay"><button class="play-btn"><i class="fas fa-play"></i></button></div>
       </div>
       <div class="video-card">
         <video src="galeria/wizki-ruchome/Cinematic_residential_parking__Kling_O3_74913.mp4" muted loop playsinline preload="metadata"></video>
-        <div class="video-overlay">
-          <button class="play-btn"><i class="fas fa-play"></i></button>
-        </div>
+        <div class="video-overlay"><button class="play-btn"><i class="fas fa-play"></i></button></div>
       </div>
       <div class="video-card">
         <video src="galeria/wizki-ruchome/Cinematic_residential_scene_Th_Kling_O3_87290.mp4" muted loop playsinline preload="metadata"></video>
-        <div class="video-overlay">
-          <button class="play-btn"><i class="fas fa-play"></i></button>
-        </div>
+        <div class="video-overlay"><button class="play-btn"><i class="fas fa-play"></i></button></div>
       </div>
       <div class="video-card">
         <video src="galeria/wizki-ruchome/Cinematic_residential_street_s_Kling_O3_09980.mp4" muted loop playsinline preload="metadata"></video>
-        <div class="video-overlay">
-          <button class="play-btn"><i class="fas fa-play"></i></button>
-        </div>
+        <div class="video-overlay"><button class="play-btn"><i class="fas fa-play"></i></button></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     LOKALIZACJA
-     ═══════════════════════════════════════════════════════ -->
+<!-- ═══ LOKALIZACJA ═══ -->
 <section id="lokalizacja" style="padding:100px 0; background:var(--color-white);">
   <div class="container">
     <div class="inwestycja-grid" style="margin-bottom:64px;">
       <div class="fade-up">
         <div class="section-label">Gdzie jesteśmy?</div>
-        <h2 class="section-title">Gąski — kameralna perła<br />zachodniego wybrzeża</h2>
+        <h2 class="section-title">Gąski — 150 metrów do plaży<br />i zero konkurencji wielkich hoteli</h2>
         <div class="section-subtitle">
-          <p>Gąski to kameralna miejscowość w województwie zachodniopomorskim, w rejonie Mielna i Kołobrzegu. Brak dużych hoteli i nadmiernej urbanizacji — to właśnie kameralność i bliskość natury przyciągają gości przez cały rok.</p>
+          <p>Miejscowość, w której klient płaci więcej za kameralność i bliskość natury. Lokalizacja, która wydłuża sezon zarobkowy o 2–3 miesiące poza lipiec i sierpień.</p>
           <br />
-          <p>Bezpośrednie sąsiedztwo latarni morskiej i trasy rowerowe R10 (Velo Baltica) wydłużają sezon turystyczny daleko poza lato — aktywni turyści przyjeżdżają wiosną i jesienią.</p>
+          <p>Bezpośrednie sąsiedztwo latarni morskiej i trasy rowerowej R10 (Velo Baltica) przyciągają aktywnych turystów od kwietnia do października.</p>
         </div>
         <div class="lok-atuty" style="margin-top:36px;">
           <div class="lok-atut">
             <div class="lok-atut-icon"><i class="fas fa-umbrella-beach"></i></div>
-            <div>
-              <strong>150 m od plaży</strong>
-              <p>Szeroka plaża bałtycka dosłownie za rogiem.</p>
-            </div>
+            <div><strong>150 m od plaży</strong><p>Szeroka plaża bałtycka — 3 minuty spacerem.</p></div>
           </div>
           <div class="lok-atut">
             <div class="lok-atut-icon"><i class="fas fa-dharmachakra"></i></div>
-            <div>
-              <strong>Latarnia morska</strong>
-              <p>Wyjątkowy punkt orientacyjny w bezpośrednim sąsiedztwie.</p>
-            </div>
+            <div><strong>Latarnia morska Gąski</strong><p>Atrakcja turystyczna przyciągająca gości poza sezonem.</p></div>
           </div>
           <div class="lok-atut">
             <div class="lok-atut-icon"><i class="fas fa-bicycle"></i></div>
-            <div>
-              <strong>Trasy R10 — Velo Baltica</strong>
-              <p>Popularne trasy rowerowe — aktywni turyści przez cały rok.</p>
-            </div>
-          </div>
-          <div class="lok-atut">
-            <div class="lok-atut-icon"><i class="fas fa-home"></i></div>
-            <div>
-              <strong>Kameralność premium</strong>
-              <p>Brak dużych hoteli i masowej turystyki. Prywatność i spokój.</p>
-            </div>
+            <div><strong>Szlak R10 — Velo Baltica</strong><p>Trasa przebiega bezpośrednio w sąsiedztwie inwestycji.</p></div>
           </div>
           <div class="lok-atut">
             <div class="lok-atut-icon"><i class="fas fa-sun"></i></div>
-            <div>
-              <strong>Wydłużony sezon zarobkowy</strong>
-              <p>Wiosna, lato i jesień — nie tylko lipiec i sierpień.</p>
-            </div>
+            <div><strong>Wydłużony sezon</strong><p>120–150 dób z rezerwacjami rocznie, nie tylko lipiec–sierpień.</p></div>
           </div>
         </div>
+        <a href="lokalizacja.html" class="btn btn-dark" style="margin-top:32px;">
+          <i class="fas fa-map-marker-alt" style="margin-right:8px;"></i>Pełna strona lokalizacji
+        </a>
       </div>
       <div class="fade-up">
-        <!-- Mapa Google (placeholder do uzupełnienia) -->
         <div style="background:var(--color-bg); border-radius:16px; overflow:hidden; height:460px; display:flex; align-items:center; justify-content:center; border:2px dashed rgba(28,61,90,0.2); flex-direction:column; gap:16px;">
           <i class="fas fa-map-marker-alt" style="font-size:48px; color:var(--color-accent);"></i>
-          <p style="color:var(--color-muted); font-size:15px; text-align:center;">
-            Mapa Google Maps<br />
-            <small>(uzupełnij iframe w investment-data.json)</small>
-          </p>
-          <a href="https://maps.google.com/?q=Gąski+zachodniopomorskie" target="_blank" class="btn btn-dark" style="margin-top:8px; padding:10px 20px; font-size:13px;">
+          <p style="color:var(--color-muted); font-size:15px; text-align:center;">Gąski, gm. Mielno<br />woj. zachodniopomorskie</p>
+          <a href="https://maps.google.com/?q=Gąski+zachodniopomorskie" target="_blank" rel="noopener" class="btn btn-dark" style="margin-top:8px; padding:10px 20px; font-size:13px;">
             <i class="fas fa-external-link-alt" style="margin-right:6px;"></i>Otwórz w Google Maps
           </a>
         </div>
@@ -608,24 +871,22 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     KONTAKT
-     ═══════════════════════════════════════════════════════ -->
+<!-- ═══ KONTAKT ═══ -->
 <section id="kontakt" style="padding:100px 0; background:var(--color-bg);">
   <div class="container">
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:start;">
       <div class="fade-up">
         <div class="section-label">Kontakt</div>
-        <h2 class="section-title">Zainteresowany<br />inwestycją?</h2>
-        <p class="section-subtitle" style="margin-bottom:40px;">Skontaktuj się z nami — odpowiemy na wszystkie pytania i umówimy prezentację inwestycji.</p>
-        <div style="display:flex; flex-direction:column; gap:20px;">
+        <h2 class="section-title">Porozmawiajmy<br />o Twoim apartamencie</h2>
+        <p class="section-subtitle" style="margin-bottom:40px;">Zostaw kontakt — oddzwonimy w ciągu 24 godzin. Albo zadzwoń teraz.</p>
+        <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:32px;">
           <div style="display:flex; align-items:center; gap:16px;">
             <div style="width:48px; height:48px; background:var(--color-primary); border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
               <i class="fas fa-phone" style="color:var(--color-accent);"></i>
             </div>
             <div>
-              <div style="font-weight:700; color:var(--color-primary);">[DO UZUPEŁNIENIA]</div>
-              <div style="font-size:13px; color:var(--color-muted);">Telefon</div>
+              <div style="font-weight:700; color:var(--color-primary);">+48 XXX XXX XXX</div>
+              <div style="font-size:13px; color:var(--color-muted);">pon–pt: 9:00–17:00, sob: 10:00–14:00</div>
             </div>
           </div>
           <div style="display:flex; align-items:center; gap:16px;">
@@ -633,7 +894,7 @@
               <i class="fas fa-envelope" style="color:var(--color-accent);"></i>
             </div>
             <div>
-              <div style="font-weight:700; color:var(--color-primary);">[DO UZUPEŁNIENIA]</div>
+              <div style="font-weight:700; color:var(--color-primary);">hello@tarasygaski.pl</div>
               <div style="font-size:13px; color:var(--color-muted);">E-mail</div>
             </div>
           </div>
@@ -643,60 +904,72 @@
             </div>
             <div>
               <div style="font-weight:700; color:var(--color-primary);">AT Inwest Gąski sp. z o.o.</div>
-              <div style="font-size:13px; color:var(--color-muted);">ul. Św. Marcin 29/8, 61-806 Poznań</div>
+              <div style="font-size:13px; color:var(--color-muted);">ul. Dąbrowskiego 63/3, 60-529 Poznań</div>
             </div>
           </div>
+        </div>
+        <!-- Lead magnet -->
+        <div class="lead-magnet">
+          <i class="fas fa-file-download" style="font-size:32px; color:var(--color-accent); margin-bottom:12px;"></i>
+          <h4>Pobierz pakiet inwestora</h4>
+          <p>Cennik wszystkich apartamentów, karta lokalu z rzutem, model finansowy i prognoza przychodów.</p>
+          <a href="kontakt.html#pakiet" class="btn btn-dark" style="margin-top:16px; width:100%; text-align:center; display:block;">
+            Pobierz pakiet →
+          </a>
         </div>
       </div>
       <div class="fade-up">
         <div style="background:var(--color-white); border-radius:16px; padding:40px; box-shadow:var(--shadow);">
+          <h3 style="color:var(--color-primary); margin-bottom:24px; font-size:20px; font-weight:700;">Wyślij zapytanie</h3>
           <form id="kontakt-form" novalidate>
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
               <div>
                 <label style="font-size:13px; font-weight:600; color:var(--color-primary); display:block; margin-bottom:6px;">Imię i nazwisko *</label>
-                <input type="text" required placeholder="Jan Kowalski"
-                       style="width:100%; padding:12px 14px; border:1.5px solid #dde3ea; border-radius:8px; font-size:15px; outline:none; transition:border 0.2s;"
-                       onfocus="this.style.borderColor='var(--color-primary)'" onblur="this.style.borderColor='#dde3ea'" />
+                <input type="text" required placeholder="Jan Kowalski" class="form-input" />
               </div>
               <div>
                 <label style="font-size:13px; font-weight:600; color:var(--color-primary); display:block; margin-bottom:6px;">Telefon *</label>
-                <input type="tel" required placeholder="+48 500 000 000"
-                       style="width:100%; padding:12px 14px; border:1.5px solid #dde3ea; border-radius:8px; font-size:15px; outline:none; transition:border 0.2s;"
-                       onfocus="this.style.borderColor='var(--color-primary)'" onblur="this.style.borderColor='#dde3ea'" />
+                <input type="tel" required placeholder="+48 500 000 000" class="form-input" />
               </div>
             </div>
             <div style="margin-bottom:16px;">
-              <label style="font-size:13px; font-weight:600; color:var(--color-primary); display:block; margin-bottom:6px;">E-mail</label>
-              <input type="email" placeholder="jan@example.com"
-                     style="width:100%; padding:12px 14px; border:1.5px solid #dde3ea; border-radius:8px; font-size:15px; outline:none; transition:border 0.2s;"
-                     onfocus="this.style.borderColor='var(--color-primary)'" onblur="this.style.borderColor='#dde3ea'" />
+              <label style="font-size:13px; font-weight:600; color:var(--color-primary); display:block; margin-bottom:6px;">E-mail *</label>
+              <input type="email" required placeholder="jan@example.com" class="form-input" />
             </div>
             <div style="margin-bottom:16px;">
-              <label style="font-size:13px; font-weight:600; color:var(--color-primary); display:block; margin-bottom:6px;">Interesujący lokal</label>
-              <select style="width:100%; padding:12px 14px; border:1.5px solid #dde3ea; border-radius:8px; font-size:15px; outline:none; background:white; cursor:pointer;">
+              <label style="font-size:13px; font-weight:600; color:var(--color-primary); display:block; margin-bottom:6px;">Interesuje mnie lokal nr</label>
+              <select class="form-input" id="lokal-select">
                 <option value="">Nie zdecydowano / dowolny</option>
-                <option>M1 — parter, 29,8 m², 421 500 zł</option>
-                <option>M2 — parter, 29,8 m², 439 800 zł</option>
-                <option>M4 — parter, 38,2 m², 559 400 zł</option>
-                <option>M8 — parter, 38,7 m², 514 400 zł</option>
-                <option>M9 — I piętro, 34,2 m², 496 800 zł</option>
-                <option>M12 — I piętro, 52,1 m², 730 300 zł</option>
-                <option>M15 — I piętro, 48,9 m², 686 200 zł</option>
-                <option>M16 — I piętro, 40,4 m², 541 500 zł</option>
-                <option>M18 — II piętro, 34,2 m², 509 400 zł</option>
-                <option>M25 — II piętro, 40,4 m², 556 400 zł</option>
+                <option>M1 — parter, 29,8 m², od 295 000 zł netto</option>
+                <option>M2 — parter, 29,8 m², 357 600 zł netto</option>
+                <option>M4 — parter, 38,2 m², 454 800 zł netto</option>
+                <option>M5 — parter, 34,4 m², 436 500 zł netto</option>
+                <option>M6 — parter, 41,9 m², 507 200 zł netto</option>
+                <option>M7 — parter, 29,8 m², 357 600 zł netto</option>
+                <option>M8 — parter, 38,7 m², od 383 300 zł netto</option>
+                <option>M9 — I piętro, 34,2 m², od 338 900 zł netto</option>
+                <option>M10 — I piętro, 34,2 m², od 339 000 zł netto</option>
+                <option>M11 — I piętro, 34,2 m², od 339 000 zł netto</option>
+                <option>M12 — I piętro, 52,1 m², od 536 400 zł netto</option>
+                <option>M14 — I piętro, 34,4 m², 443 400 zł netto</option>
+                <option>M15 — I piętro, 48,9 m², od 504 100 zł netto</option>
+                <option>M16 — I piętro, 40,4 m², od 399 900 zł netto</option>
+                <option>M17 — I piętro, 34,3 m², od 339 500 zł netto</option>
+                <option>M18 — II piętro, 34,2 m², 414 200 zł netto</option>
+                <option>M19 — II piętro, 34,2 m², 414 300 zł netto</option>
+                <option>M20 — II piętro, 34,2 m², 414 300 zł netto</option>
+                <option>M25 — II piętro, 40,4 m², od 399 900 zł netto</option>
+                <option>M26 — II piętro, 34,3 m², 414 800 zł netto</option>
               </select>
             </div>
-            <div style="margin-bottom:20px;">
+            <div style="margin-bottom:16px;">
               <label style="font-size:13px; font-weight:600; color:var(--color-primary); display:block; margin-bottom:6px;">Wiadomość</label>
-              <textarea rows="4" placeholder="Mam pytania dotyczące inwestycji..."
-                        style="width:100%; padding:12px 14px; border:1.5px solid #dde3ea; border-radius:8px; font-size:15px; outline:none; resize:vertical; transition:border 0.2s;"
-                        onfocus="this.style.borderColor='var(--color-primary)'" onblur="this.style.borderColor='#dde3ea'"></textarea>
+              <textarea rows="3" placeholder="Mam pytania dotyczące inwestycji..." class="form-input" style="resize:vertical;"></textarea>
             </div>
             <label style="display:flex; gap:10px; align-items:flex-start; cursor:pointer; margin-bottom:24px;">
               <input type="checkbox" id="rodo" style="margin-top:3px; flex-shrink:0;" />
               <span style="font-size:12px; color:var(--color-muted); line-height:1.5;">
-                Wyrażam zgodę na przetwarzanie moich danych osobowych przez AT Inwest Gąski sp. z o.o. w celu odpowiedzi na zapytanie. Mogę cofnąć zgodę w dowolnym momencie. *
+                Wyrażam zgodę na kontakt telefoniczny i mailowy w celu przedstawienia oferty Tarasy Gąski przez AT Inwest Gąski sp. z o.o. *
               </span>
             </label>
             <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; display:flex; align-items:center; gap:8px;">
@@ -709,22 +982,20 @@
   </div>
 </section>
 
-<!-- ═══════════════════════════════════════════════════════
-     FOOTER
-     ═══════════════════════════════════════════════════════ -->
+<!-- ═══ FOOTER ═══ -->
 <footer style="background:var(--color-primary); padding:64px 0 32px;">
   <div class="container">
     <div style="display:grid; grid-template-columns:2fr 1fr 1fr; gap:48px; margin-bottom:48px;">
       <div>
         <img src="galeria/02-logo/logo-biale.png" alt="Tarasy Gąski" style="height:48px; margin-bottom:20px;" />
         <p style="color:rgba(255,255,255,0.65); font-size:14px; line-height:1.7; max-width:320px;">
-          Tarasy Gąski — nowoczesne apartamenty inwestycyjne nad Bałtykiem. Pełna bezobsługowość, model 80/20, operator BLU Apartments.
+          Tarasy Gąski — nowoczesne apartamenty inwestycyjne nad Bałtykiem. 150 m od plaży, model 80/20, operator BLU Apartments.
         </p>
         <div style="margin-top:20px; display:flex; gap:12px;">
-          <a href="#" style="width:36px; height:36px; background:rgba(255,255,255,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--color-accent); transition:0.2s;" onmouseover="this.style.background='var(--color-accent)'; this.style.color='var(--color-primary)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.color='var(--color-accent)'">
+          <a href="#" style="width:36px;height:36px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--color-accent);" aria-label="Facebook">
             <i class="fab fa-facebook-f"></i>
           </a>
-          <a href="#" style="width:36px; height:36px; background:rgba(255,255,255,0.1); border-radius:50%; display:flex; align-items:center; justify-content:center; color:var(--color-accent); transition:0.2s;" onmouseover="this.style.background='var(--color-accent)'; this.style.color='var(--color-primary)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'; this.style.color='var(--color-accent)'">
+          <a href="#" style="width:36px;height:36px;background:rgba(255,255,255,0.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--color-accent);" aria-label="Instagram">
             <i class="fab fa-instagram"></i>
           </a>
         </div>
@@ -732,36 +1003,35 @@
       <div>
         <h4 style="color:var(--color-accent); font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:20px;">Nawigacja</h4>
         <ul style="display:flex; flex-direction:column; gap:10px;">
-          <li><a href="#inwestycja" style="color:rgba(255,255,255,0.7); font-size:14px; transition:0.2s;" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">O inwestycji</a></li>
-          <li><a href="#mieszkania" style="color:rgba(255,255,255,0.7); font-size:14px; transition:0.2s;" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Wybierz mieszkanie</a></li>
-          <li><a href="#model" style="color:rgba(255,255,255,0.7); font-size:14px; transition:0.2s;" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Model najmu</a></li>
-          <li><a href="#galeria" style="color:rgba(255,255,255,0.7); font-size:14px; transition:0.2s;" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Galeria</a></li>
-          <li><a href="#lokalizacja" style="color:rgba(255,255,255,0.7); font-size:14px; transition:0.2s;" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Lokalizacja</a></li>
-          <li><a href="#kontakt" style="color:rgba(255,255,255,0.7); font-size:14px; transition:0.2s;" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Kontakt</a></li>
+          <li><a href="index.html#inwestycja" style="color:rgba(255,255,255,0.7); font-size:14px;">O inwestycji</a></li>
+          <li><a href="apartamenty.html" style="color:rgba(255,255,255,0.7); font-size:14px;">Apartamenty i ceny</a></li>
+          <li><a href="model-biznesowy.html" style="color:rgba(255,255,255,0.7); font-size:14px;">Model biznesowy</a></li>
+          <li><a href="operator.html" style="color:rgba(255,255,255,0.7); font-size:14px;">Operator BLU</a></li>
+          <li><a href="lokalizacja.html" style="color:rgba(255,255,255,0.7); font-size:14px;">Lokalizacja</a></li>
+          <li><a href="deweloper.html" style="color:rgba(255,255,255,0.7); font-size:14px;">Deweloper</a></li>
+          <li><a href="kontakt.html" style="color:rgba(255,255,255,0.7); font-size:14px;">Kontakt</a></li>
         </ul>
       </div>
       <div>
         <h4 style="color:var(--color-accent); font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:20px;">Informacje prawne</h4>
         <ul style="display:flex; flex-direction:column; gap:10px;">
           <li style="color:rgba(255,255,255,0.55); font-size:13px;">AT Inwest Gąski sp. z o.o.</li>
-          <li style="color:rgba(255,255,255,0.55); font-size:13px;">ul. Św. Marcin 29/8, 61-806 Poznań</li>
+          <li style="color:rgba(255,255,255,0.55); font-size:13px;">ul. Dąbrowskiego 63/3</li>
+          <li style="color:rgba(255,255,255,0.55); font-size:13px;">60-529 Poznań</li>
           <li style="color:rgba(255,255,255,0.55); font-size:13px;">NIP: 7831912871</li>
           <li style="color:rgba(255,255,255,0.55); font-size:13px;">KRS: 0001129137</li>
-          <li style="margin-top:8px;"><a href="#" style="color:rgba(255,255,255,0.7); font-size:13px; transition:0.2s;" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Polityka prywatności</a></li>
-          <li><a href="#kontakt" style="color:rgba(255,255,255,0.7); font-size:13px; transition:0.2s;" onmouseover="this.style.color='var(--color-accent)'" onmouseout="this.style.color='rgba(255,255,255,0.7)'">Prospekt informacyjny</a></li>
+          <li style="margin-top:8px;"><a href="#" style="color:rgba(255,255,255,0.7); font-size:13px;">Polityka prywatności</a></li>
         </ul>
       </div>
     </div>
     <div style="border-top:1px solid rgba(255,255,255,0.12); padding-top:24px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
       <p style="color:rgba(255,255,255,0.4); font-size:13px;">© 2026 AT Inwest Gąski sp. z o.o. Wszelkie prawa zastrzeżone.</p>
-      <p style="color:rgba(255,255,255,0.3); font-size:12px;">Wizualizacje mają charakter poglądowy. Oferta nie stanowi oferty handlowej w rozumieniu art. 66 KC.</p>
+      <p style="color:rgba(255,255,255,0.3); font-size:12px;">Ceny netto. Wizualizacje mają charakter poglądowy. Prezentowane dane mają charakter szacunkowy i nie stanowią gwarancji przyszłych wyników. Oferta nie stanowi oferty handlowej w rozumieniu art. 66 KC.</p>
     </div>
   </div>
 </footer>
 
-<!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<!-- App JS -->
 <script src="app.js"></script>
 </body>
 </html>

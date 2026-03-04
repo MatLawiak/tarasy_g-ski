@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt — Tarasy Gąski | Zapytaj o apartament</title>
+  <meta name="description" content="Skontaktuj się z Tarasy Gąski — apartamenty inwestycyjne nad Bałtykiem. Zostaw kontakt, oddzwonimy w 24h. Biuro sprzedaży AT Inwest Gąski." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header id="header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo"><img src="galeria/02-logo/logo-biale.png" alt="Tarasy Gąski logo" /></a>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html#inwestycja">Inwestycja</a></li>
+        <li><a href="apartamenty.html">Apartamenty</a></li>
+        <li><a href="model-biznesowy.html">Model biznesowy</a></li>
+        <li><a href="operator.html">Operator</a></li>
+        <li><a href="lokalizacja.html">Lokalizacja</a></li>
+        <li><a href="deweloper.html">Deweloper</a></li>
+        <li><a href="kontakt.html" class="btn btn-primary" style="padding:10px 22px;font-size:13px;background:rgba(201,166,107,0.9);">Kontakt</a></li>
+      </ul>
+    </nav>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="subpage-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Strona główna</a><span>/</span> Kontakt</div>
+    <h1>Porozmawiajmy<br /><span>o Twoim apartamencie nad morzem</span></h1>
+    <p class="hero-sub">Zostaw kontakt — oddzwonimy w ciągu 24 godzin. Albo zadzwoń teraz — chętnie odpowiemy na pytania.</p>
+  </div>
+</section>
+
+<!-- FORMULARZ + DANE -->
+<section class="section-light">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start;" class="fade-up">
+
+      <!-- Formularz -->
+      <div>
+        <h2 class="section-title" style="font-size:24px; margin-bottom:32px;">Wyślij zapytanie</h2>
+        <div style="background:var(--color-white); border-radius:20px; padding:40px; box-shadow:var(--shadow);">
+          <form id="kontakt-form" novalidate>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+              <div>
+                <label style="font-size:13px; font-weight:600; color:var(--color-primary); display:block; margin-bottom:6px;">Imię i nazwisko *</label>
+                <input type="text" required placeholder="Jan Kowalski" class="form-input" />
+              </div>
+              <div>
+                <label style="font-size:13px; font-weight:600; color:var(--color-primary); display:block; margin-bottom:6px;">Numer telefonu *</label>
+                <input type="tel" required placeholder="+48 500 000 000" class="form-input" />
+              </div>
+            </div>
+            <div style="margin-bottom:16px;">
+              <label style="font-size:13px; font-weight:600; color:var(--color-primary); display:block; margin-bottom:6px;">Adres e-mail *</label>
+              <input type="email" required placeholder="jan@example.com" class="form-input" />
+            </div>
+            <div style="margin-bottom:16px;">
+              <label style="font-size:13px; font-weight:600; color:var(--color-primary); display:block; margin-bottom:6px;">Interesuje mnie</label>
+              <select class="form-input">
+                <option>2 pokoje</option>
+                <option>3 pokoje</option>
+                <option>Nie wiem jeszcze</option>
+              </select>
+            </div>
+            <div style="margin-bottom:16px;">
+              <label style="font-size:13px; font-weight:600; color:var(--color-primary); display:block; margin-bottom:6px;">Cel zakupu</label>
+              <select class="form-input">
+                <option>Inwestycja</option>
+                <option>Second home (dom wakacyjny)</option>
+                <option>Jedno i drugie</option>
+              </select>
+            </div>
+            <div style="margin-bottom:16px;">
+              <label style="font-size:13px; font-weight:600; color:var(--color-primary); display:block; margin-bottom:6px;">Interesuje mnie lokal nr (opcjonalnie)</label>
+              <select class="form-input" id="lokal-select">
+                <option value="">Nie zdecydowano</option>
+                <option>M1 — parter, 29,8 m²</option><option>M2 — parter, 29,8 m²</option>
+                <option>M4 — parter, 38,2 m²</option><option>M5 — parter, 34,4 m²</option>
+                <option>M6 — parter, 41,9 m²</option><option>M7 — parter, 29,8 m²</option>
+                <option>M8 — parter, 38,7 m²</option><option>M9 — I piętro, 34,2 m²</option>
+                <option>M10 — I piętro, 34,2 m²</option><option>M11 — I piętro, 34,2 m²</option>
+                <option>M12 — I piętro, 52,1 m²</option><option>M14 — I piętro, 34,4 m²</option>
+                <option>M15 — I piętro, 48,9 m²</option><option>M16 — I piętro, 40,4 m²</option>
+                <option>M17 — I piętro, 34,3 m²</option><option>M18 — II piętro, 34,2 m²</option>
+                <option>M19 — II piętro, 34,2 m²</option><option>M20 — II piętro, 34,2 m²</option>
+                <option>M25 — II piętro, 40,4 m²</option><option>M26 — II piętro, 34,3 m²</option>
+              </select>
+            </div>
+            <div style="margin-bottom:16px;">
+              <label style="font-size:13px; font-weight:600; color:var(--color-primary); display:block; margin-bottom:6px;">Wiadomość (opcjonalne)</label>
+              <textarea rows="4" placeholder="Mam pytania dotyczące inwestycji..." class="form-input" style="resize:vertical;"></textarea>
+            </div>
+            <label style="display:flex; gap:10px; align-items:flex-start; cursor:pointer; margin-bottom:24px;">
+              <input type="checkbox" id="rodo" style="margin-top:3px; flex-shrink:0;" />
+              <span style="font-size:12px; color:var(--color-muted); line-height:1.5;">
+                Wyrażam zgodę na kontakt telefoniczny i mailowy w celu przedstawienia oferty. <a href="#" style="color:var(--color-primary);">Polityka prywatności</a> *
+              </span>
+            </label>
+            <button type="submit" class="btn btn-primary" style="width:100%; display:flex; align-items:center; justify-content:center; gap:8px; font-size:16px;">
+              <i class="fas fa-paper-plane"></i>Wyślij zapytanie
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Dane + Lead Magnet -->
+      <div style="display:flex; flex-direction:column; gap:24px;">
+        <h2 class="section-title" style="font-size:24px; margin-bottom:8px;">Dane kontaktowe</h2>
+        <div style="background:var(--color-white); border-radius:16px; padding:32px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:20px;">
+          <div style="display:flex; align-items:center; gap:16px;">
+            <div style="width:52px; height:52px; background:var(--color-primary); border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <i class="fas fa-phone" style="color:var(--color-accent); font-size:18px;"></i>
+            </div>
+            <div>
+              <div style="font-weight:800; color:var(--color-primary); font-size:16px;">+48 XXX XXX XXX</div>
+              <div style="font-size:13px; color:var(--color-muted);">pon–pt: 9:00–17:00, sob: 10:00–14:00</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:16px;">
+            <div style="width:52px; height:52px; background:var(--color-primary); border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <i class="fas fa-envelope" style="color:var(--color-accent); font-size:18px;"></i>
+            </div>
+            <div>
+              <div style="font-weight:800; color:var(--color-primary); font-size:16px;">hello@tarasygaski.pl</div>
+              <div style="font-size:13px; color:var(--color-muted);">E-mail biura sprzedaży</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <div style="width:52px; height:52px; background:var(--color-primary); border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <i class="fas fa-map-marker-alt" style="color:var(--color-accent); font-size:18px;"></i>
+            </div>
+            <div>
+              <div style="font-weight:800; color:var(--color-primary); margin-bottom:4px;">Biuro sprzedaży (korespondencja)</div>
+              <div style="font-size:14px; color:var(--color-muted); line-height:1.6;">AT Inwest Gąski sp. z o.o.<br />ul. Dąbrowskiego 63/3<br />60-529 Poznań</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:flex-start; gap:16px;">
+            <div style="width:52px; height:52px; background:var(--color-primary); border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+              <i class="fas fa-umbrella-beach" style="color:var(--color-accent); font-size:18px;"></i>
+            </div>
+            <div>
+              <div style="font-weight:800; color:var(--color-primary); margin-bottom:4px;">Lokalizacja inwestycji</div>
+              <div style="font-size:14px; color:var(--color-muted);">Gąski, gm. Mielno<br />woj. zachodniopomorskie</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lead Magnet -->
+        <div id="pakiet" style="background:var(--color-primary); border-radius:16px; padding:32px; text-align:center;">
+          <i class="fas fa-file-download" style="font-size:40px; color:var(--color-accent); margin-bottom:16px;"></i>
+          <h3 style="color:var(--color-white); font-size:20px; font-weight:800; margin-bottom:12px;">Pobierz pakiet inwestora</h3>
+          <p style="color:rgba(255,255,255,0.75); font-size:14px; line-height:1.65; margin-bottom:20px;">Cennik wszystkich apartamentów, karta lokalu z rzutem, model finansowy i prognoza przychodów. Jeden PDF — wszystko, czego potrzebujesz do podjęcia decyzji.</p>
+          <form id="pakiet-form" novalidate>
+            <div style="margin-bottom:12px;">
+              <input type="text" placeholder="Imię" class="form-input" required />
+            </div>
+            <div style="margin-bottom:12px;">
+              <input type="email" placeholder="E-mail *" class="form-input" required />
+            </div>
+            <div style="margin-bottom:16px;">
+              <input type="tel" placeholder="Telefon *" class="form-input" required />
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%; display:flex; align-items:center; justify-content:center; gap:8px;">
+              <i class="fas fa-download"></i>Pobierz pakiet →
+            </button>
+          </form>
+        </div>
+
+        <!-- 3 icon-boxy zaufania -->
+        <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+          <div style="background:var(--color-white); border-radius:12px; padding:16px; text-align:center; box-shadow:var(--shadow);">
+            <i class="fas fa-shield-alt" style="font-size:24px; color:var(--color-accent); margin-bottom:8px;"></i>
+            <p style="font-size:12px; color:var(--color-muted); margin:0; line-height:1.5;">Twoje dane są bezpieczne. Bez spamu.</p>
+          </div>
+          <div style="background:var(--color-white); border-radius:12px; padding:16px; text-align:center; box-shadow:var(--shadow);">
+            <i class="fas fa-clock" style="font-size:24px; color:var(--color-accent); margin-bottom:8px;"></i>
+            <p style="font-size:12px; color:var(--color-muted); margin:0; line-height:1.5;">Oddzwonimy w 24h robocze.</p>
+          </div>
+          <div style="background:var(--color-white); border-radius:12px; padding:16px; text-align:center; box-shadow:var(--shadow);">
+            <i class="fas fa-file-contract" style="font-size:24px; color:var(--color-accent); margin-bottom:8px;"></i>
+            <p style="font-size:12px; color:var(--color-muted); margin:0; line-height:1.5;">Bez zobowiązań. Zdecydujesz w swoim tempie.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAPA -->
+<section class="section-bg">
+  <div class="container">
+    <div style="border-radius:20px; overflow:hidden; height:400px; background:var(--color-white); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:16px; border:2px dashed rgba(28,61,90,0.15);" class="fade-up">
+      <i class="fas fa-map-marked-alt" style="font-size:56px; color:var(--color-accent);"></i>
+      <p style="color:var(--color-muted); font-size:16px; text-align:center;">Gąski, gm. Mielno — 150 m od plaży</p>
+      <a href="https://maps.google.com/?q=Gąski+zachodniopomorskie" target="_blank" rel="noopener" class="btn btn-dark">
+        <i class="fas fa-external-link-alt" style="margin-right:8px;"></i>Otwórz w Google Maps
+      </a>
+      <p style="color:var(--color-muted); font-size:14px; margin-top:8px;">Chcesz zobaczyć działkę na żywo? Umów wizytę — pokażemy Ci teren i okolicę.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:var(--color-primary); padding:48px 0 32px;">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:2fr 1fr 1fr; gap:48px; margin-bottom:40px;">
+      <div>
+        <img src="galeria/02-logo/logo-biale.png" alt="Tarasy Gąski" style="height:44px; margin-bottom:16px;" />
+        <p style="color:rgba(255,255,255,0.6); font-size:14px; line-height:1.7; max-width:300px;">Tarasy Gąski — nowoczesne apartamenty inwestycyjne nad Bałtykiem. Pełna bezobsługowość, model 80/20, operator BLU Apartments.</p>
+      </div>
+      <div>
+        <h4 style="color:var(--color-accent); font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:16px;">Nawigacja</h4>
+        <ul style="display:flex; flex-direction:column; gap:8px;">
+          <li><a href="index.html" style="color:rgba(255,255,255,0.7); font-size:14px;">Strona główna</a></li>
+          <li><a href="apartamenty.html" style="color:rgba(255,255,255,0.7); font-size:14px;">Apartamenty</a></li>
+          <li><a href="model-biznesowy.html" style="color:rgba(255,255,255,0.7); font-size:14px;">Model biznesowy</a></li>
+          <li><a href="operator.html" style="color:rgba(255,255,255,0.7); font-size:14px;">Operator BLU</a></li>
+          <li><a href="lokalizacja.html" style="color:rgba(255,255,255,0.7); font-size:14px;">Lokalizacja</a></li>
+          <li><a href="deweloper.html" style="color:rgba(255,255,255,0.7); font-size:14px;">Deweloper</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 style="color:var(--color-accent); font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; margin-bottom:16px;">Dane prawne</h4>
+        <ul style="display:flex; flex-direction:column; gap:8px;">
+          <li style="color:rgba(255,255,255,0.5); font-size:13px;">AT Inwest Gąski sp. z o.o.</li>
+          <li style="color:rgba(255,255,255,0.5); font-size:13px;">ul. Dąbrowskiego 63/3</li>
+          <li style="color:rgba(255,255,255,0.5); font-size:13px;">60-529 Poznań</li>
+          <li style="color:rgba(255,255,255,0.5); font-size:13px;">NIP: 7831912871</li>
+          <li style="color:rgba(255,255,255,0.5); font-size:13px;">KRS: 0001129137</li>
+          <li><a href="#" style="color:rgba(255,255,255,0.7); font-size:13px;">Polityka prywatności</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(255,255,255,0.12); padding-top:20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+      <p style="color:rgba(255,255,255,0.4); font-size:13px;">© 2026 AT Inwest Gąski sp. z o.o. Wszelkie prawa zastrzeżone.</p>
+      <p style="color:rgba(255,255,255,0.3); font-size:12px;">Ceny netto. Dane szacunkowe, nie stanowią gwarancji przyszłych wyników. Oferta nie stanowi oferty handlowej w rozumieniu art. 66 KC.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+  // Pakiet form
+  const pakietForm = document.getElementById('pakiet-form');
+  if (pakietForm) {
+    pakietForm.addEventListener('submit', e => {
+      e.preventDefault();
+      pakietForm.innerHTML = '<div style="text-align:center;padding:24px 0;color:var(--color-accent);"><i class="fas fa-check-circle" style="font-size:40px;margin-bottom:12px;display:block;"></i><strong style="color:white;font-size:16px;">Dziękujemy!</strong><p style="color:rgba(255,255,255,0.7);margin-top:8px;font-size:14px;">Pakiet inwestora wyślemy na Twój e-mail.</p></div>';
+    });
+  }
+</script>
+</body>
+</html>

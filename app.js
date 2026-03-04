@@ -6,24 +6,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ─── STICKY HEADER SHADOW ───────────────────────────────
   const header = document.getElementById('header');
-  window.addEventListener('scroll', () => {
-    header.style.boxShadow = window.scrollY > 10
-      ? '0 4px 24px rgba(0,0,0,0.25)'
-      : '0 2px 20px rgba(0,0,0,0.2)';
-  });
+  if (header) {
+    window.addEventListener('scroll', () => {
+      header.style.boxShadow = window.scrollY > 10
+        ? '0 4px 24px rgba(0,0,0,0.25)'
+        : '0 2px 20px rgba(0,0,0,0.2)';
+    });
+  }
 
   // ─── HAMBURGER MENU ─────────────────────────────────────
   const hamburger = document.querySelector('.hamburger');
   const nav = document.querySelector('.nav');
-  if (hamburger) {
+  if (hamburger && nav) {
     hamburger.addEventListener('click', () => {
       nav.classList.toggle('open');
       hamburger.classList.toggle('open');
     });
+    document.querySelectorAll('.nav a').forEach(link => {
+      link.addEventListener('click', () => nav.classList.remove('open'));
+    });
   }
-  document.querySelectorAll('.nav a').forEach(link => {
-    link.addEventListener('click', () => nav.classList.remove('open'));
-  });
 
   // ─── SMOOTH SCROLL z offsetem headera ───────────────────
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -31,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = document.querySelector(anchor.getAttribute('href'));
       if (!target) return;
       e.preventDefault();
-      const offset = header.offsetHeight + 16;
+      const offset = (header ? header.offsetHeight : 72) + 16;
       window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
     });
   });
@@ -55,36 +57,55 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ─── FILTROWANIE TABELI PO KONDYGNACJI ──────────────────
-  const filterBtns = document.querySelectorAll('.filter-btn');
+  // ─── MULTI-FILTR TABELI (piętro + pokoje + status) ──────
+  const activeFilters = { floor: 'all', rooms: 'all', status: 'all' };
+
+  function applyFilters() {
+    const rows = document.querySelectorAll('#lokale-tbody tr[data-lokal]');
+    rows.forEach(row => {
+      const floorMatch  = activeFilters.floor  === 'all' || row.dataset.floor  === activeFilters.floor;
+      const roomsMatch  = activeFilters.rooms  === 'all' || row.dataset.rooms  === activeFilters.rooms;
+      const statusMatch = activeFilters.status === 'all' || row.dataset.status === activeFilters.status;
+      row.style.display = (floorMatch && roomsMatch && statusMatch) ? '' : 'none';
+    });
+  }
+
+  document.querySelectorAll('[data-filter-floor]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-filter-floor]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilters.floor = btn.dataset.filterFloor;
+      applyFilters();
+    });
+  });
+
+  document.querySelectorAll('[data-filter-rooms]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-filter-rooms]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilters.rooms = btn.dataset.filterRooms;
+      applyFilters();
+    });
+  });
+
+  document.querySelectorAll('[data-filter-status]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('[data-filter-status]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeFilters.status = btn.dataset.filterStatus;
+      applyFilters();
+    });
+  });
+
+  // Stary system filtrów (kompatybilność z sekcjami legacy)
+  const filterBtns = document.querySelectorAll('.filter-btn[data-filter]');
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const filter = btn.dataset.filter;
       document.querySelectorAll('tbody tr[data-floor]').forEach(row => {
-        if (filter === 'all' || row.dataset.floor === filter) {
-          row.style.display = '';
-        } else {
-          row.style.display = 'none';
-        }
-      });
-    });
-  });
-
-  // ─── STATUS FILTER ──────────────────────────────────────
-  const statusBtns = document.querySelectorAll('.status-btn');
-  statusBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      statusBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const filter = btn.dataset.status;
-      document.querySelectorAll('tbody tr[data-status]').forEach(row => {
-        if (filter === 'all' || row.dataset.status === filter) {
-          row.style.display = '';
-        } else {
-          row.style.display = 'none';
-        }
+        row.style.display = (filter === 'all' || row.dataset.floor === filter) ? '' : 'none';
       });
     });
   });
@@ -112,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelectorAll('tbody tr').forEach(r => r.classList.remove('highlighted'));
       row.classList.add('highlighted');
       row.style.display = '';
-      const offset = header.offsetHeight + 32;
+      const offset = (header ? header.offsetHeight : 72) + 32;
       window.scrollTo({ top: row.offsetTop - offset, behavior: 'smooth' });
     });
   });
@@ -122,21 +143,35 @@ document.addEventListener('DOMContentLoaded', () => {
     const video = card.querySelector('video');
     const overlay = card.querySelector('.video-overlay');
     if (!video || !overlay) return;
-
     overlay.addEventListener('click', () => {
       overlay.style.opacity = '0';
       overlay.style.pointerEvents = 'none';
       video.play();
     });
-
     video.addEventListener('pause', () => {
       overlay.style.opacity = '1';
       overlay.style.pointerEvents = 'auto';
     });
-
     video.addEventListener('ended', () => {
       overlay.style.opacity = '1';
       overlay.style.pointerEvents = 'auto';
+    });
+  });
+
+  // ─── FAQ ACCORDION ───────────────────────────────────────
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling;
+      const isOpen = btn.classList.contains('open');
+      // zamknij wszystkie
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.classList.remove('open');
+        if (q.nextElementSibling) q.nextElementSibling.classList.remove('open');
+      });
+      if (!isOpen) {
+        btn.classList.add('open');
+        if (answer) answer.classList.add('open');
+      }
     });
   });
 
@@ -155,11 +190,25 @@ document.addEventListener('DOMContentLoaded', () => {
   // ─── FORMULARZ ──────────────────────────────────────────
   const form = document.getElementById('kontakt-form');
   if (form) {
+    // Wypełnij dropdown jeśli URL ma parametr ?lokal=
+    const urlParams = new URLSearchParams(window.location.search);
+    const lokalParam = urlParams.get('lokal');
+    if (lokalParam) {
+      const select = document.getElementById('lokal-select');
+      if (select) {
+        Array.from(select.options).forEach(opt => {
+          if (opt.value.startsWith(lokalParam) || opt.text.startsWith(lokalParam)) {
+            opt.selected = true;
+          }
+        });
+      }
+    }
+
     form.addEventListener('submit', e => {
       e.preventDefault();
       const btn = form.querySelector('button[type="submit"]');
       const rodo = form.querySelector('#rodo');
-      if (!rodo.checked) {
+      if (rodo && !rodo.checked) {
         alert('Proszę zaakceptować zgodę na przetwarzanie danych osobowych.');
         return;
       }
@@ -170,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <div style="text-align:center;padding:48px 0;">
             <div style="font-size:56px;margin-bottom:16px;color:var(--color-accent)">✓</div>
             <h3 style="color:var(--color-primary);font-size:22px;margin-bottom:10px">Dziękujemy za kontakt!</h3>
-            <p style="color:var(--color-muted)">Odezwiemy się w ciągu 24 godzin.</p>
+            <p style="color:var(--color-muted)">Odezwiemy się w ciągu 24 godzin roboczych.</p>
           </div>`;
       }, 1200);
     });
