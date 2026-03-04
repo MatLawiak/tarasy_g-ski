@@ -1,24 +1,27 @@
 /* ============================================================
    TARASY GĄSKI — DEVELOPER LANDING PAGE
-   Stack: Vanilla HTML/CSS/JS | Color: Navy #1C3D5A + Gold #C9A66B
+   Stack: Vanilla HTML/CSS/JS
+   Brand Colors: Baltic Sea #3B6870 + Touch #E1C7AA (Księga znaku 2026)
+   Fonts: Reem Kufi (headings) + Jost (body)
    ============================================================ */
 
 :root {
-  --color-primary:       #1C3D5A;
-  --color-primary-light: #2a5478;
-  --color-accent:        #C9A66B;
-  --color-accent-dark:   #b08d52;
-  --color-bg:            #F0F4F8;
-  --color-bg2:           #E8EEF4;
+  --color-primary:       #3B6870;   /* Baltic Sea */
+  --color-primary-light: #6EA1AF;   /* Moray Eel */
+  --color-accent:        #E1C7AA;   /* Touch */
+  --color-accent-dark:   #A59A8B;   /* Cold Sand */
+  --color-bg:            #E2DDD5;   /* Bride */
+  --color-bg2:           #DAE2E5;   /* Ghost */
   --color-white:         #FEFCFB;
-  --color-text:          #1a1a2e;
-  --color-muted:         #5a6a7a;
+  --color-text:          #2a1f1a;
+  --color-muted:         #716A5F;   /* Bear */
   --color-sold:          #dc2626;
   --color-available:     #059669;
   --color-reserved:      #d97706;
-  --font-main: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-main:    'Jost', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Reem Kufi', sans-serif;
   --radius: 10px;
-  --shadow: 0 4px 28px rgba(28,61,90,0.12);
+  --shadow: 0 4px 28px rgba(59,104,112,0.14);
   --transition: 0.3s ease;
   --max-width: 1200px;
 }
@@ -26,6 +29,7 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
 body { font-family: var(--font-main); color: var(--color-text); background: var(--color-white); overflow-x: hidden; }
+h1, h2, h3, h4, .section-title, .hero-title { font-family: var(--font-heading); }
 img { max-width: 100%; height: auto; display: block; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
@@ -45,7 +49,7 @@ section { overflow: hidden; }
 /* ─── HEADER ─── */
 #header {
   position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-  background: rgba(28,61,90,0.97);
+  background: rgba(59,104,112,0.97);
   backdrop-filter: blur(12px);
   box-shadow: 0 2px 20px rgba(0,0,0,0.2);
   transition: var(--transition);
