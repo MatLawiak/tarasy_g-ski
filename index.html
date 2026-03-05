@@ -1034,6 +1034,51 @@
   </div>
 </footer>
 
+
+<!-- ═══ INQUIRY PANEL — widget zapytaj o apartament (inspiracja: ustkaflow.pl) ═══ -->
+<div class="inquiry-panel" id="inquiryPanel">
+  <header class="inquiry-panel-header">
+    <div>
+      <h3>Chcesz kupić apartament?</h3>
+      <p>Zostaw dane, oddzwonimy do&nbsp;Ciebie</p>
+    </div>
+    <button class="inquiry-panel-close" id="inquiryClose" aria-label="Zamknij panel">
+      <svg width="12" height="12" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="1.05" width="17.29" height="1.49" transform="rotate(45 1.05 0)" fill="white"/>
+        <rect x="13.28" y="1.05" width="17.29" height="1.49" transform="rotate(135 13.28 1.05)" fill="white"/>
+      </svg>
+    </button>
+  </header>
+  <div class="inquiry-panel-body">
+    <form class="inquiry-form" id="inquiryForm" novalidate>
+      <div class="form-group">
+        <input type="text" name="name" placeholder="Imię i nazwisko *" required />
+      </div>
+      <div class="form-group">
+        <input type="tel" name="phone" placeholder="Telefon *" autocomplete="tel" required />
+      </div>
+      <div class="form-group">
+        <input type="email" name="email" placeholder="E-mail *" autocomplete="email" required />
+      </div>
+      <div class="form-group">
+        <textarea name="message" placeholder="Wiadomość (opcjonalnie)"></textarea>
+      </div>
+      <div class="form-checkbox">
+        <input type="checkbox" id="inquiry-rodo" name="rodo" required />
+        <label for="inquiry-rodo">Wyrażam zgodę na przetwarzanie danych osobowych przez AT Inwest Gąski sp. z o.o. w celu udzielenia odpowiedzi. <a href="kontakt.html#rodo">Polityka prywatności</a>.</label>
+      </div>
+      <button type="submit" class="btn btn-primary inquiry-submit">Umów rozmowę</button>
+      <div class="inquiry-success" id="inquirySuccess" style="display:none">
+        ✓ Dziękujemy! Oddzwonimy wkrótce.
+      </div>
+    </form>
+  </div>
+</div>
+
+<button class="inquiry-tab" id="inquiryTab" aria-label="Zapytaj o ofertę">
+  Zapytaj o ofertę
+</button>
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script src="app.js"></script>
 </body>

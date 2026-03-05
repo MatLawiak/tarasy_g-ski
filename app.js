@@ -187,6 +187,42 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.1 });
   fadeEls.forEach(el => observer.observe(el));
 
+  // ─── INQUIRY PANEL (widget zapytaj o apartament) ────────
+  const inquiryPanel   = document.getElementById('inquiryPanel');
+  const inquiryClose   = document.getElementById('inquiryClose');
+  const inquiryTab     = document.getElementById('inquiryTab');
+  const inquiryForm    = document.getElementById('inquiryForm');
+  const inquirySuccess = document.getElementById('inquirySuccess');
+
+  if (inquiryPanel && inquiryClose && inquiryTab) {
+    inquiryClose.addEventListener('click', () => {
+      inquiryPanel.classList.add('is-hidden');
+      inquiryTab.classList.add('is-visible');
+    });
+    inquiryTab.addEventListener('click', () => {
+      inquiryPanel.classList.remove('is-hidden');
+      inquiryTab.classList.remove('is-visible');
+    });
+  }
+
+  if (inquiryForm && inquirySuccess) {
+    inquiryForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const rodoEl = inquiryForm.querySelector('#inquiry-rodo');
+      if (rodoEl && !rodoEl.checked) {
+        alert('Proszę zaakceptować zgodę na przetwarzanie danych.');
+        return;
+      }
+      if (!inquiryForm.checkValidity()) { inquiryForm.reportValidity(); return; }
+      const submitBtn = inquiryForm.querySelector('.inquiry-submit');
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = 'Wysyłanie…'; }
+      setTimeout(() => {
+        inquirySuccess.style.display = 'block';
+        if (submitBtn) submitBtn.style.display = 'none';
+      }, 800);
+    });
+  }
+
   // ─── FORMULARZ ──────────────────────────────────────────
   const form = document.getElementById('kontakt-form');
   if (form) {
