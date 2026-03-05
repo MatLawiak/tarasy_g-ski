@@ -187,6 +187,57 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.1 });
   fadeEls.forEach(el => observer.observe(el));
 
+  // ─── HERO STICKY SCROLL — wyłanianie budynku z owalu ───
+  // Mechanizm identyczny z ustkaflow.pl:
+  //   #hero = 200vh (scroll space), .hero-split = sticky (100vh)
+  //   progress 0→1 animuje: oval scale, image parallax, content fade-in
+
+  const heroSection  = document.getElementById('hero');
+  const ovalWrap     = document.querySelector('.hero-oval-wrap');
+  const ovalImg      = document.querySelector('.hero-oval-wrap img');
+  const contentCol   = document.querySelector('.hero-content-col');
+  const locationChip = document.querySelector('.hero-location-chip');
+
+  function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+  function lerp(a, b, t)    { return a + (b - a) * t; }
+
+  function updateHeroAnim() {
+    if (!heroSection || !ovalWrap || !ovalImg) return;
+    if (window.innerWidth <= 1024) return; // na mobile CSS ustawia wartosci finalne
+
+    const scrollY     = window.scrollY;
+    const heroTop     = heroSection.offsetTop;
+    const scrollSpace = heroSection.offsetHeight - window.innerHeight; // ~100vh
+    const raw         = Math.max(0, Math.min(1, (scrollY - heroTop) / scrollSpace));
+    const p           = easeOutCubic(raw);
+
+    // 1. Oval: scale 0.72 → 1.0
+    ovalWrap.style.transform = `scale(${lerp(0.72, 1.0, p)})`;
+
+    // 2. Obraz: wyłania sie z dolu (budynek "wschodzi" z koła)
+    ovalImg.style.transform  = `translateY(${lerp(22, -4, p)}%) scale(${lerp(1.35, 1.0, p)})`;
+
+    // 3. Prawa kolumna: fade-in + slide-up z 20% opoznieniem
+    const cp = easeOutCubic(Math.max(0, Math.min(1, (raw - 0.2) / 0.6)));
+    if (contentCol) {
+      contentCol.style.opacity   = cp;
+      contentCol.style.transform = `translateY(${lerp(32, 0, cp)}px)`;
+    }
+
+    // 4. Location chip: pojawia sie najpozniej (50% progress)
+    const lp = easeOutCubic(Math.max(0, Math.min(1, (raw - 0.5) / 0.4)));
+    if (locationChip) {
+      locationChip.style.opacity   = lp;
+      locationChip.style.transform = `translateY(${lerp(12, 0, lp)}px)`;
+    }
+  }
+
+  if (heroSection && window.innerWidth > 1024) {
+    window.addEventListener('scroll', updateHeroAnim, { passive: true });
+    window.addEventListener('resize', updateHeroAnim, { passive: true });
+    updateHeroAnim();
+  }
+
   // ─── INQUIRY PANEL (widget zapytaj o apartament) ────────
   const inquiryPanel   = document.getElementById('inquiryPanel');
   const inquiryClose   = document.getElementById('inquiryClose');

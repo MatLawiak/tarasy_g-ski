@@ -67,18 +67,21 @@ section { overflow: hidden; }
 .hamburger { display: none; cursor: pointer; padding: 8px; }
 .hamburger span { display: block; width: 24px; height: 2px; background: var(--color-white); margin: 5px 0; transition: var(--transition); }
 
-/* ─── HERO — split layout z owalną ramką ─── */
+/* ─── HERO — sticky scroll z owalną ramką (wyłanianie budynku) ─── */
 #hero {
-  min-height: 100vh;
+  height: 200vh;           /* scroll space — identycznie jak ustkaflow.pl */
   background: var(--color-bg);
-  overflow: hidden;
+  position: relative;
 }
 
 .hero-split {
+  position: sticky;
+  top: 0;
+  height: 100vh;
   display: grid;
   grid-template-columns: 54% 46%;
-  min-height: 100vh;
-  padding-top: 72px; /* wysokość headera */
+  padding-top: 72px;
+  overflow: hidden;
 }
 
 /* Lewa kolumna — owalna wizualizacja */
@@ -90,6 +93,7 @@ section { overflow: hidden; }
   padding: 40px 16px 40px 48px;
 }
 
+/* Owalna ramka — startuje mniejsza, rośnie na scroll */
 .hero-oval-wrap {
   width: 100%;
   max-width: 580px;
@@ -97,16 +101,20 @@ section { overflow: hidden; }
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 24px 80px rgba(59,104,112,0.22);
+  transform: scale(0.72);
+  transform-origin: center center;
+  will-change: transform;
 }
 
+/* Obraz startuje "niżej" — budynek wyłania się w górę na scroll */
 .hero-oval-wrap img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.8s ease;
+  transform: translateY(22%) scale(1.35);
+  transform-origin: center bottom;
+  will-change: transform;
 }
-
-.hero-oval-wrap:hover img { transform: scale(1.04); }
 
 .hero-location-chip {
   position: absolute;
@@ -122,15 +130,21 @@ section { overflow: hidden; }
   display: flex;
   align-items: center;
   gap: 8px;
+  opacity: 0;
+  transform: translateY(12px);
+  will-change: opacity, transform;
 }
 
-/* Prawa kolumna — content */
+/* Prawa kolumna — content, wyłania się równolegle */
 .hero-content-col {
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 60px 48px 60px 32px;
   gap: 0;
+  opacity: 0;
+  transform: translateY(32px);
+  will-change: opacity, transform;
 }
 
 .hero-badge {
@@ -673,11 +687,14 @@ footer { background: #0d1f2d; color: rgba(255,255,255,0.65); padding: 36px 0; }
 
 /* ─── MOBILE ─── */
 @media (max-width: 1024px) {
-  .hero-split { grid-template-columns: 1fr; padding-top: 72px; min-height: auto; }
+  /* Na tablet/mobile: wyłącz sticky scroll, pokaż wszystko od razu */
+  #hero { height: auto; min-height: 100vh; }
+  .hero-split { position: relative; top: auto; height: auto; min-height: 100vh; grid-template-columns: 1fr; padding-top: 72px; }
   .hero-visual { padding: 40px 32px 24px; }
-  .hero-oval-wrap { max-width: 440px; margin: 0 auto; }
-  .hero-location-chip { left: 50%; transform: translateX(-50%); bottom: 32px; white-space: nowrap; }
-  .hero-content-col { padding: 24px 32px 48px; align-items: center; text-align: center; }
+  .hero-oval-wrap { max-width: 440px; margin: 0 auto; transform: scale(1) !important; }
+  .hero-oval-wrap img { transform: translateY(0) scale(1) !important; }
+  .hero-location-chip { left: 50%; transform: translateX(-50%) !important; bottom: 32px; white-space: nowrap; opacity: 1 !important; }
+  .hero-content-col { padding: 24px 32px 48px; align-items: center; text-align: center; opacity: 1 !important; transform: none !important; }
   .hero-badge { margin-left: auto; margin-right: auto; }
   .hero-content-col p { margin-left: auto; margin-right: auto; }
   .hero-buttons { justify-content: center; }
