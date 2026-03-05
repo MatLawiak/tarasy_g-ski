@@ -211,6 +211,17 @@ document.addEventListener('DOMContentLoaded', () => {
       inquiryPanel.classList.remove('is-hidden');
       inquiryTab.classList.remove('is-visible');
     });
+
+    // Pokaż panel po przewinięciu 50% strony (jednorazowo)
+    let panelShown = false;
+    window.addEventListener('scroll', () => {
+      if (panelShown) return;
+      const scrolled = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+      if (scrolled >= 0.5) {
+        panelShown = true;
+        inquiryPanel.classList.remove('is-hidden');
+      }
+    }, { passive: true });
   }
 
   if (inquiryForm && inquirySuccess) {

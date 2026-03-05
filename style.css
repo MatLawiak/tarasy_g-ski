@@ -159,7 +159,8 @@ section { overflow: hidden; }
   left: 0;
   right: 0;
   z-index: 2;
-  padding-bottom: 56px;
+  padding-top: 80px;    /* rozszerza kontener ku górze → tekst wyżej na ekranie */
+  padding-bottom: 48px;
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.8s ease 0.7s, transform 0.8s ease 0.7s;
