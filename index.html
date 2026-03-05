@@ -39,49 +39,54 @@
 
 <!-- ═══ HERO ═══ -->
 <section id="hero">
-  <div class="hero-split">
+  <div class="hero-sticky">
 
-    <!-- ── LEWA KOLUMNA: owalna wizualizacja ── -->
-    <div class="hero-visual">
-      <div class="hero-img-clip">
-        <img class="hero-img" src="galeria/01-hero/01-hero.png" alt="Tarasy Gąski — wizualizacja inwestycji" />
-      </div>
-      <div class="hero-location-chip">
-        <i class="fas fa-map-marker-alt"></i> Gąski · 150 m od plaży
-      </div>
+    <!-- Pełnoekranowy obraz z animowaną maską owalną (jak ustkaflow.pl) -->
+    <div class="hero-img-clip">
+      <img class="hero-img" src="galeria/01-hero/01-hero.png" alt="Tarasy Gąski — wizualizacja inwestycji" />
     </div>
 
-    <!-- ── PRAWA KOLUMNA: treść + KPI ── -->
-    <div class="hero-content-col">
-      <div class="hero-badge">
-        <i class="fas fa-umbrella-beach"></i>
-        Apartamenty inwestycyjne · Bałtyk
-      </div>
-      <h1>Twoje aktywo<br /><span>nad Bałtykiem</span></h1>
-      <p>Apartament, który pracuje na siebie przez cały rok.<br />
-         Pełna bezobsługowość, model 80/20, operator BLU Apartments.</p>
-      <div class="hero-buttons">
-        <a href="apartamenty.html" class="btn btn-primary">
-          <i class="fas fa-search" style="margin-right:8px"></i>Sprawdź dostępność i ceny
-        </a>
-        <a href="kontakt.html" class="btn btn-dark">Porozmawiajmy</a>
-      </div>
-      <div class="hero-kpis">
-        <div class="hero-kpi">
-          <div class="hero-kpi-num">80%</div>
-          <div class="hero-kpi-label">przychodu dla właściciela</div>
+    <!-- Gradient: ciemny dół = płynne przejście do paska Premia Startowa -->
+    <div class="hero-overlay" aria-hidden="true"></div>
+
+    <!-- Chip lokalizacji — pojawia się z opóźnieniem -->
+    <div class="hero-location-chip">
+      <i class="fas fa-map-marker-alt"></i> Gąski · 150 m od plaży
+    </div>
+
+    <!-- Treść nad gradientem — dolne pozycjonowanie jak p-home--hero-top-content -->
+    <div class="hero-content">
+      <div class="container">
+        <div class="hero-badge">
+          <i class="fas fa-umbrella-beach"></i>
+          Apartamenty inwestycyjne · Bałtyk
         </div>
-        <div class="hero-kpi">
-          <div class="hero-kpi-num">26</div>
-          <div class="hero-kpi-label">apartamentów</div>
+        <h1>Twoje aktywo<br /><span>nad Bałtykiem</span></h1>
+        <p>Apartament, który pracuje na siebie przez cały rok.<br />
+           Pełna bezobsługowość, model 80/20, operator BLU Apartments.</p>
+        <div class="hero-buttons">
+          <a href="apartamenty.html" class="btn btn-primary">
+            <i class="fas fa-search" style="margin-right:8px"></i>Sprawdź dostępność i ceny
+          </a>
+          <a href="kontakt.html" class="btn btn-ghost">Porozmawiajmy</a>
         </div>
-        <div class="hero-kpi">
-          <div class="hero-kpi-num">295 tys.</div>
-          <div class="hero-kpi-label">zł netto (promo)</div>
-        </div>
-        <div class="hero-kpi">
-          <div class="hero-kpi-num">Q2 2027</div>
-          <div class="hero-kpi-label">przekazanie</div>
+        <div class="hero-kpis">
+          <div class="hero-kpi">
+            <div class="hero-kpi-num">80%</div>
+            <div class="hero-kpi-label">przychodu dla właściciela</div>
+          </div>
+          <div class="hero-kpi">
+            <div class="hero-kpi-num">26</div>
+            <div class="hero-kpi-label">apartamentów</div>
+          </div>
+          <div class="hero-kpi">
+            <div class="hero-kpi-num">295 tys.</div>
+            <div class="hero-kpi-label">zł netto (promo)</div>
+          </div>
+          <div class="hero-kpi">
+            <div class="hero-kpi-num">Q2 2027</div>
+            <div class="hero-kpi-label">przekazanie</div>
+          </div>
         </div>
       </div>
     </div>

@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroSection  = document.getElementById('hero');
   const imgClip      = document.querySelector('.hero-img-clip');
   const heroImg      = document.querySelector('.hero-img');
-  const contentCol   = document.querySelector('.hero-content-col');
+  const heroContent  = document.querySelector('.hero-content');
   const locationChip = document.querySelector('.hero-location-chip');
 
   function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
@@ -210,27 +210,28 @@ document.addEventListener('DOMContentLoaded', () => {
     const raw         = Math.max(0, Math.min(1, (scrollY - heroTop) / scrollSpace));
     const p           = easeOutCubic(raw);
 
-    // 1. Maska owalna: ellipse(32% 36%) → ellipse(110% 110%) — pełne wypełnienie kolumny
-    const rx = lerp(32, 110, p);
-    const ry = lerp(36, 110, p);
-    const cy = lerp(54, 50, p);
+    // 1. Maska owalna: mały owal → pełny ekran
+    //    rx=82%, ry=78% pokrywa wszystkie rogi nawet na panoramicznych ekranach
+    const rx = lerp(28, 82, p);
+    const ry = lerp(32, 78, p);
+    const cy = lerp(46, 50, p);
     imgClip.style.clipPath = `ellipse(${rx}% ${ry}% at 50% ${cy}%)`;
 
-    // 2. Obraz: lekki parallax — budynek wyłania się z owalu
-    heroImg.style.transform = `translateY(${lerp(6, 0, p)}%) scale(${lerp(1.08, 1.0, p)})`;
+    // 2. Parallax: budynek "wschodzi" delikatnie ku górze
+    heroImg.style.transform = `scale(${lerp(1.06, 1.0, p)}) translateY(${lerp(4, 0, p)}%)`;
 
-    // 3. Prawa kolumna: fade-in + slide-up z 20% opoznieniem
-    const cp = easeOutCubic(Math.max(0, Math.min(1, (raw - 0.2) / 0.6)));
-    if (contentCol) {
-      contentCol.style.opacity   = cp;
-      contentCol.style.transform = `translateY(${lerp(32, 0, cp)}px)`;
+    // 3. Treść hero: fade-in + slide-up z 25% opoznieniem
+    const cp = easeOutCubic(Math.max(0, Math.min(1, (raw - 0.25) / 0.6)));
+    if (heroContent) {
+      heroContent.style.opacity   = cp;
+      heroContent.style.transform = `translateY(${lerp(28, 0, cp)}px)`;
     }
 
-    // 4. Location chip: pojawia sie najpozniej (50% progress)
-    const lp = easeOutCubic(Math.max(0, Math.min(1, (raw - 0.5) / 0.4)));
+    // 4. Chip lokalizacji: pojawia sie przy 40% progress
+    const lp = easeOutCubic(Math.max(0, Math.min(1, (raw - 0.4) / 0.45)));
     if (locationChip) {
       locationChip.style.opacity   = lp;
-      locationChip.style.transform = `translateY(${lerp(12, 0, lp)}px)`;
+      locationChip.style.transform = `translateY(${lerp(-10, 0, lp)}px)`;
     }
   }
 

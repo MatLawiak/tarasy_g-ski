@@ -68,33 +68,26 @@ section { overflow: hidden; }
 .hamburger span { display: block; width: 24px; height: 2px; background: var(--color-white); margin: 5px 0; transition: var(--transition); }
 
 /* ─── HERO — sticky scroll z owalną ramką (wyłanianie budynku) ─── */
+/* ── HERO: full-width sticky scroll (wzorzec ustkaflow.pl) ── */
 #hero {
-  height: 200vh;           /* scroll space — identycznie jak ustkaflow.pl */
-  background: var(--color-bg);
+  height: 200vh;
   position: relative;
 }
 
-.hero-split {
+/* Sticky viewport — zajmuje cały ekran */
+.hero-sticky {
   position: sticky;
   top: 0;
   height: 100vh;
-  display: grid;
-  grid-template-columns: 54% 46%;
-  padding-top: 72px;
   overflow: hidden;
+  background: #0d1f2d; /* = kolor premia-bar → płynne przejście */
 }
 
-/* Lewa kolumna — pełnokolumnowa wizualizacja z animowanym clip-path */
-.hero-visual {
-  position: relative;
-  overflow: visible;
-}
-
-/* Maska owalna — startuje mała, rozszerza się na scroll odsłaniając całe zdjęcie */
+/* Obraz: cały ekran, clip-path zaczyna jako mały owal */
 .hero-img-clip {
   position: absolute;
   inset: 0;
-  clip-path: ellipse(32% 36% at 50% 54%);
+  clip-path: ellipse(28% 32% at 50% 46%);
   will-change: clip-path;
 }
 
@@ -102,40 +95,59 @@ section { overflow: hidden; }
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
-  transform: translateY(6%) scale(1.08);
+  object-position: center 30%;
+  transform: scale(1.06) translateY(4%);
   transform-origin: center center;
   will-change: transform;
 }
 
+/* Gradient overlay: górna przejrzystość → ciemny dół (= premia bar #0d1f2d) */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(13,31,45,0.15) 0%,
+    transparent 25%,
+    transparent 45%,
+    rgba(13,31,45,0.65) 72%,
+    rgba(13,31,45,0.95) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Chip lokalizacji — pojawia się u góry */
 .hero-location-chip {
   position: absolute;
-  bottom: 64px;
-  left: 72px;
-  background: var(--color-white);
+  top: 92px;
+  left: 48px;
+  background: rgba(255,255,255,0.92);
   color: var(--color-primary);
   font-size: 13px;
   font-weight: 600;
   padding: 8px 18px;
   border-radius: 24px;
-  box-shadow: 0 4px 20px rgba(59,104,112,0.18);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
   gap: 8px;
+  z-index: 3;
   opacity: 0;
-  transform: translateY(12px);
+  transform: translateY(-10px);
   will-change: opacity, transform;
 }
 
-/* Prawa kolumna — content, wyłania się równolegle */
-.hero-content-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 60px 48px 60px 32px;
-  gap: 0;
+/* Treść: pozycja dolna nad gradientem — jak p-home--hero-top-content z ustkaflow.pl */
+.hero-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding-bottom: 56px;
   opacity: 0;
-  transform: translateY(32px);
+  transform: translateY(28px);
   will-change: opacity, transform;
 }
 
@@ -150,50 +162,68 @@ section { overflow: hidden; }
   font-size: 13px;
   font-weight: 700;
   letter-spacing: 0.5px;
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   width: fit-content;
 }
 
-.hero-content-col h1 {
-  font-size: clamp(36px, 4vw, 58px);
+.hero-content h1 {
+  font-size: clamp(38px, 5vw, 72px);
   font-weight: 700;
-  line-height: 1.08;
-  color: var(--color-primary);
-  margin-bottom: 20px;
+  line-height: 1.02;
+  color: #fff;
+  margin-bottom: 14px;
 }
 
-.hero-content-col h1 span { color: var(--color-primary-light); }
+.hero-content h1 span { color: var(--color-accent); }
 
-.hero-content-col p {
-  font-size: clamp(15px, 1.5vw, 18px);
-  color: var(--color-muted);
-  margin-bottom: 36px;
-  line-height: 1.7;
-  max-width: 420px;
+.hero-content p {
+  font-size: clamp(15px, 1.4vw, 17px);
+  color: rgba(255,255,255,0.82);
+  margin-bottom: 28px;
+  line-height: 1.65;
+  max-width: 540px;
 }
 
-.hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 48px; }
+.hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 36px; }
+
+/* Ghost button dla ciemnego tła */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  border: 2px solid rgba(255,255,255,0.5);
+  color: #fff;
+  background: transparent;
+  transition: border-color 0.2s, background 0.2s;
+  text-decoration: none;
+}
+.btn-ghost:hover { border-color: var(--color-accent); color: var(--color-accent); }
 
 /* KPI pod przyciskami */
 .hero-kpis {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  padding-top: 24px;
-  border-top: 1px solid var(--color-accent-dark);
+  grid-template-columns: repeat(4, auto);
+  gap: 12px 36px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.18);
+  width: fit-content;
 }
 
 .hero-kpi-num {
   font-family: var(--font-heading);
-  font-size: clamp(18px, 2.2vw, 26px);
+  font-size: clamp(20px, 2.4vw, 30px);
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-accent);
   line-height: 1;
 }
 
 .hero-kpi-label {
   font-size: 11px;
-  color: var(--color-muted);
+  color: rgba(255,255,255,0.65);
   margin-top: 4px;
   line-height: 1.4;
 }
@@ -679,16 +709,14 @@ footer { background: #0d1f2d; color: rgba(255,255,255,0.65); padding: 36px 0; }
 
 /* ─── MOBILE ─── */
 @media (max-width: 1024px) {
-  /* Tablet/mobile: scroll animation działa tak samo, pojedyncza kolumna */
+  /* Tablet/mobile: full-width sticky hero bez zmian strukturalnych */
   #hero { height: 200vh; }
-  .hero-split { grid-template-columns: 1fr; padding-top: 64px; }
-  .hero-visual { height: 52vh; padding: 0; }
-  .hero-location-chip { left: 50%; bottom: 24px; white-space: nowrap; }
-  .hero-content-col { padding: 20px 24px 40px; align-items: center; text-align: center; }
-  .hero-badge { margin-left: auto; margin-right: auto; }
-  .hero-content-col p { margin-left: auto; margin-right: auto; }
-  .hero-buttons { justify-content: center; }
-  .hero-kpis { grid-template-columns: repeat(2, 1fr); }
+  .hero-location-chip { top: 80px; left: 20px; font-size: 12px; padding: 6px 14px; }
+  .hero-content { padding-bottom: 40px; }
+  .hero-content h1 { font-size: clamp(32px, 6vw, 52px); }
+  .hero-content p { font-size: 14px; }
+  .hero-buttons { justify-content: flex-start; }
+  .hero-kpis { grid-template-columns: repeat(2, auto); gap: 10px 28px; }
   .inwestycja-grid, .kontakt-grid { grid-template-columns: 1fr; gap: 48px; }
   .model-grid, .model-cards { grid-template-columns: 1fr 1fr; }
   .wideo-grid, .video-grid { grid-template-columns: 1fr 1fr; }
