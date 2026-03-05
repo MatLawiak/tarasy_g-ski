@@ -68,28 +68,32 @@ section { overflow: hidden; }
 .hamburger span { display: block; width: 24px; height: 2px; background: var(--color-white); margin: 5px 0; transition: var(--transition); }
 
 /* ─── HERO — sticky scroll z owalną ramką (wyłanianie budynku) ─── */
-/* ── HERO: full-width sticky scroll (wzorzec ustkaflow.pl) ── */
+/* ── HERO: full-width entrance animation (wzorzec ustkaflow.pl) ── */
 #hero {
-  height: 200vh;
+  height: 100vh;       /* bez dodatkowej scroll-space → zero pustej przestrzeni */
   position: relative;
-  background: #0d1f2d; /* = premia-bar kolor → brak białej luki po unstick hero-sticky */
+  background: #0d1f2d;
 }
 
-/* Sticky viewport — zajmuje cały ekran */
+/* Wrapper — pełny ekran */
 .hero-sticky {
-  position: sticky;
-  top: 0;
+  position: relative;
   height: 100vh;
   overflow: hidden;
-  background: #0d1f2d; /* = kolor premia-bar → płynne przejście */
+  background: #0d1f2d;
 }
 
-/* Obraz: cały ekran, clip-path zaczyna jako mały owal */
+/* Obraz: cały ekran, clip-path startowy = mały owal */
 .hero-img-clip {
   position: absolute;
   inset: 0;
   clip-path: ellipse(28% 32% at 50% 46%);
-  will-change: clip-path;
+  transition: clip-path 1.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Stan końcowy po dodaniu klasy .hero-revealed */
+.hero-revealed .hero-img-clip {
+  clip-path: ellipse(82% 78% at 50% 50%);
 }
 
 .hero-img {
@@ -99,7 +103,11 @@ section { overflow: hidden; }
   object-position: center 30%;
   transform: scale(1.06) translateY(4%);
   transform-origin: center center;
-  will-change: transform;
+  transition: transform 1.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.hero-revealed .hero-img {
+  transform: scale(1.0) translateY(0%);
 }
 
 /* Gradient overlay: górna przejrzystość → ciemny dół (= premia bar #0d1f2d) */
@@ -136,7 +144,12 @@ section { overflow: hidden; }
   z-index: 3;
   opacity: 0;
   transform: translateY(-10px);
-  will-change: opacity, transform;
+  transition: opacity 0.6s ease 1.2s, transform 0.6s ease 1.2s;
+}
+
+.hero-revealed .hero-location-chip {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Treść: pozycja dolna nad gradientem — jak p-home--hero-top-content z ustkaflow.pl */
@@ -149,7 +162,12 @@ section { overflow: hidden; }
   padding-bottom: 56px;
   opacity: 0;
   transform: translateY(28px);
-  will-change: opacity, transform;
+  transition: opacity 0.8s ease 0.7s, transform 0.8s ease 0.7s;
+}
+
+.hero-revealed .hero-content {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero-badge {
@@ -710,8 +728,7 @@ footer { background: #0d1f2d; color: rgba(255,255,255,0.65); padding: 36px 0; }
 
 /* ─── MOBILE ─── */
 @media (max-width: 1024px) {
-  /* Tablet/mobile: full-width sticky hero bez zmian strukturalnych */
-  #hero { height: 200vh; }
+  /* Tablet/mobile: hero pozostaje 100vh (entrance animation) */
   .hero-location-chip { top: 80px; left: 20px; font-size: 12px; padding: 6px 14px; }
   .hero-content { padding-bottom: 40px; }
   .hero-content h1 { font-size: clamp(32px, 6vw, 52px); }

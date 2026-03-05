@@ -187,58 +187,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.1 });
   fadeEls.forEach(el => observer.observe(el));
 
-  // ─── HERO STICKY SCROLL — wyłanianie budynku z owalu ───
-  // Mechanizm identyczny z ustkaflow.pl:
-  //   #hero = 200vh (scroll space), .hero-split = sticky (100vh)
-  //   progress 0→1 animuje: clip-path ellipse (oval → pełna kolumna), parallax, content fade-in
-
-  const heroSection  = document.getElementById('hero');
-  const imgClip      = document.querySelector('.hero-img-clip');
-  const heroImg      = document.querySelector('.hero-img');
-  const heroContent  = document.querySelector('.hero-content');
-  const locationChip = document.querySelector('.hero-location-chip');
-
-  function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
-  function lerp(a, b, t)    { return a + (b - a) * t; }
-
-  function updateHeroAnim() {
-    if (!heroSection || !imgClip || !heroImg) return;
-
-    const scrollY     = window.scrollY;
-    const heroTop     = heroSection.offsetTop;
-    const scrollSpace = heroSection.offsetHeight - window.innerHeight; // ~100vh
-    const raw         = Math.max(0, Math.min(1, (scrollY - heroTop) / scrollSpace));
-    const p           = easeOutCubic(raw);
-
-    // 1. Maska owalna: mały owal → pełny ekran
-    //    rx=82%, ry=78% pokrywa wszystkie rogi nawet na panoramicznych ekranach
-    const rx = lerp(28, 82, p);
-    const ry = lerp(32, 78, p);
-    const cy = lerp(46, 50, p);
-    imgClip.style.clipPath = `ellipse(${rx}% ${ry}% at 50% ${cy}%)`;
-
-    // 2. Parallax: budynek "wschodzi" delikatnie ku górze
-    heroImg.style.transform = `scale(${lerp(1.06, 1.0, p)}) translateY(${lerp(4, 0, p)}%)`;
-
-    // 3. Treść hero: fade-in + slide-up z 25% opoznieniem
-    const cp = easeOutCubic(Math.max(0, Math.min(1, (raw - 0.25) / 0.6)));
-    if (heroContent) {
-      heroContent.style.opacity   = cp;
-      heroContent.style.transform = `translateY(${lerp(28, 0, cp)}px)`;
-    }
-
-    // 4. Chip lokalizacji: pojawia sie przy 40% progress
-    const lp = easeOutCubic(Math.max(0, Math.min(1, (raw - 0.4) / 0.45)));
-    if (locationChip) {
-      locationChip.style.opacity   = lp;
-      locationChip.style.transform = `translateY(${lerp(-10, 0, lp)}px)`;
-    }
-  }
-
-  if (heroSection) {
-    window.addEventListener('scroll', updateHeroAnim, { passive: true });
-    window.addEventListener('resize', updateHeroAnim, { passive: true });
-    updateHeroAnim();
+  // ─── HERO ENTRANCE ANIMATION — wyłanianie budynku z owalu ───
+  // Entrance animation (nie scroll-driven) → hero = 100vh, zero pustej przestrzeni.
+  // Klasa .hero-revealed na .hero-sticky wyzwala CSS transitions (clip-path + fade).
+  const heroSticky = document.querySelector('.hero-sticky');
+  if (heroSticky) {
+    setTimeout(() => heroSticky.classList.add('hero-revealed'), 300);
   }
 
   // ─── INQUIRY PANEL (widget zapytaj o apartament) ────────
