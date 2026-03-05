@@ -84,35 +84,27 @@ section { overflow: hidden; }
   overflow: hidden;
 }
 
-/* Lewa kolumna — owalna wizualizacja */
+/* Lewa kolumna — pełnokolumnowa wizualizacja z animowanym clip-path */
 .hero-visual {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 40px 16px 40px 48px;
+  overflow: visible;
 }
 
-/* Owalna ramka — startuje mniejsza, rośnie na scroll */
-.hero-oval-wrap {
-  width: 100%;
-  max-width: 580px;
-  aspect-ratio: 4 / 5;
-  border-radius: 50%;
-  overflow: hidden;
-  box-shadow: 0 24px 80px rgba(59,104,112,0.22);
-  transform: scale(0.72);
-  transform-origin: center center;
-  will-change: transform;
+/* Maska owalna — startuje mała, rozszerza się na scroll odsłaniając całe zdjęcie */
+.hero-img-clip {
+  position: absolute;
+  inset: 0;
+  clip-path: ellipse(32% 36% at 50% 54%);
+  will-change: clip-path;
 }
 
-/* Obraz startuje "niżej" — budynek wyłania się w górę na scroll */
-.hero-oval-wrap img {
+.hero-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transform: translateY(22%) scale(1.35);
-  transform-origin: center bottom;
+  object-position: center center;
+  transform: translateY(6%) scale(1.08);
+  transform-origin: center center;
   will-change: transform;
 }
 
@@ -690,9 +682,9 @@ footer { background: #0d1f2d; color: rgba(255,255,255,0.65); padding: 36px 0; }
   /* Na tablet/mobile: wyłącz sticky scroll, pokaż wszystko od razu */
   #hero { height: auto; min-height: 100vh; }
   .hero-split { position: relative; top: auto; height: auto; min-height: 100vh; grid-template-columns: 1fr; padding-top: 72px; }
-  .hero-visual { padding: 40px 32px 24px; }
-  .hero-oval-wrap { max-width: 440px; margin: 0 auto; transform: scale(1) !important; }
-  .hero-oval-wrap img { transform: translateY(0) scale(1) !important; }
+  .hero-visual { padding: 40px 32px 24px; min-height: 340px; }
+  .hero-img-clip { clip-path: ellipse(46% 46% at 50% 50%) !important; }
+  .hero-img { transform: none !important; }
   .hero-location-chip { left: 50%; transform: translateX(-50%) !important; bottom: 32px; white-space: nowrap; opacity: 1 !important; }
   .hero-content-col { padding: 24px 32px 48px; align-items: center; text-align: center; opacity: 1 !important; transform: none !important; }
   .hero-badge { margin-left: auto; margin-right: auto; }

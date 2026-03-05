@@ -190,11 +190,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // ─── HERO STICKY SCROLL — wyłanianie budynku z owalu ───
   // Mechanizm identyczny z ustkaflow.pl:
   //   #hero = 200vh (scroll space), .hero-split = sticky (100vh)
-  //   progress 0→1 animuje: oval scale, image parallax, content fade-in
+  //   progress 0→1 animuje: clip-path ellipse (oval → pełna kolumna), parallax, content fade-in
 
   const heroSection  = document.getElementById('hero');
-  const ovalWrap     = document.querySelector('.hero-oval-wrap');
-  const ovalImg      = document.querySelector('.hero-oval-wrap img');
+  const imgClip      = document.querySelector('.hero-img-clip');
+  const heroImg      = document.querySelector('.hero-img');
   const contentCol   = document.querySelector('.hero-content-col');
   const locationChip = document.querySelector('.hero-location-chip');
 
@@ -202,7 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function lerp(a, b, t)    { return a + (b - a) * t; }
 
   function updateHeroAnim() {
-    if (!heroSection || !ovalWrap || !ovalImg) return;
+    if (!heroSection || !imgClip || !heroImg) return;
     if (window.innerWidth <= 1024) return; // na mobile CSS ustawia wartosci finalne
 
     const scrollY     = window.scrollY;
@@ -211,11 +211,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const raw         = Math.max(0, Math.min(1, (scrollY - heroTop) / scrollSpace));
     const p           = easeOutCubic(raw);
 
-    // 1. Oval: scale 0.72 → 1.0
-    ovalWrap.style.transform = `scale(${lerp(0.72, 1.0, p)})`;
+    // 1. Maska owalna: ellipse(32% 36%) → ellipse(80% 80%) — odsłania całe zdjęcie
+    const rx = lerp(32, 80, p);
+    const ry = lerp(36, 80, p);
+    const cy = lerp(54, 50, p);
+    imgClip.style.clipPath = `ellipse(${rx}% ${ry}% at 50% ${cy}%)`;
 
-    // 2. Obraz: wyłania sie z dolu (budynek "wschodzi" z koła)
-    ovalImg.style.transform  = `translateY(${lerp(22, -4, p)}%) scale(${lerp(1.35, 1.0, p)})`;
+    // 2. Obraz: lekki parallax — budynek wyłania się z owalu
+    heroImg.style.transform = `translateY(${lerp(6, 0, p)}%) scale(${lerp(1.08, 1.0, p)})`;
 
     // 3. Prawa kolumna: fade-in + slide-up z 20% opoznieniem
     const cp = easeOutCubic(Math.max(0, Math.min(1, (raw - 0.2) / 0.6)));
