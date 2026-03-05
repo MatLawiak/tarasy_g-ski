@@ -72,6 +72,7 @@ section { overflow: hidden; }
 #hero {
   height: 200vh;
   position: relative;
+  background: #0d1f2d; /* = premia-bar kolor → brak białej luki po unstick hero-sticky */
 }
 
 /* Sticky viewport — zajmuje cały ekran */
