@@ -679,14 +679,12 @@ footer { background: #0d1f2d; color: rgba(255,255,255,0.65); padding: 36px 0; }
 
 /* ─── MOBILE ─── */
 @media (max-width: 1024px) {
-  /* Na tablet/mobile: wyłącz sticky scroll, pokaż wszystko od razu */
-  #hero { height: auto; min-height: 100vh; }
-  .hero-split { position: relative; top: auto; height: auto; min-height: 100vh; grid-template-columns: 1fr; padding-top: 72px; }
-  .hero-visual { padding: 40px 32px 24px; min-height: 340px; }
-  .hero-img-clip { clip-path: ellipse(46% 46% at 50% 50%) !important; }
-  .hero-img { transform: none !important; }
-  .hero-location-chip { left: 50%; transform: translateX(-50%) !important; bottom: 32px; white-space: nowrap; opacity: 1 !important; }
-  .hero-content-col { padding: 24px 32px 48px; align-items: center; text-align: center; opacity: 1 !important; transform: none !important; }
+  /* Tablet/mobile: scroll animation działa tak samo, pojedyncza kolumna */
+  #hero { height: 200vh; }
+  .hero-split { grid-template-columns: 1fr; padding-top: 64px; }
+  .hero-visual { height: 52vh; padding: 0; }
+  .hero-location-chip { left: 50%; bottom: 24px; white-space: nowrap; }
+  .hero-content-col { padding: 20px 24px 40px; align-items: center; text-align: center; }
   .hero-badge { margin-left: auto; margin-right: auto; }
   .hero-content-col p { margin-left: auto; margin-right: auto; }
   .hero-buttons { justify-content: center; }

@@ -203,7 +203,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateHeroAnim() {
     if (!heroSection || !imgClip || !heroImg) return;
-    if (window.innerWidth <= 1024) return; // na mobile CSS ustawia wartosci finalne
 
     const scrollY     = window.scrollY;
     const heroTop     = heroSection.offsetTop;
@@ -211,9 +210,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const raw         = Math.max(0, Math.min(1, (scrollY - heroTop) / scrollSpace));
     const p           = easeOutCubic(raw);
 
-    // 1. Maska owalna: ellipse(32% 36%) → ellipse(80% 80%) — odsłania całe zdjęcie
-    const rx = lerp(32, 80, p);
-    const ry = lerp(36, 80, p);
+    // 1. Maska owalna: ellipse(32% 36%) → ellipse(110% 110%) — pełne wypełnienie kolumny
+    const rx = lerp(32, 110, p);
+    const ry = lerp(36, 110, p);
     const cy = lerp(54, 50, p);
     imgClip.style.clipPath = `ellipse(${rx}% ${ry}% at 50% ${cy}%)`;
 
@@ -235,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  if (heroSection && window.innerWidth > 1024) {
+  if (heroSection) {
     window.addEventListener('scroll', updateHeroAnim, { passive: true });
     window.addEventListener('resize', updateHeroAnim, { passive: true });
     updateHeroAnim();
